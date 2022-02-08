@@ -31,8 +31,11 @@ jobs:
           chmod +x ./ckb-indexer
           rm -rf ckb-indexer-linux-x86_64.tar.gz
           rm ckb-indexer-$CKB_Indexer_Version-linux.zip
-      - name: Install project dependencies
-        run: yarn
+      - name: Install project dependencies and build
+        run: |
+          yarn
+          yarn lint
+          yarn build
       - name: Start test env
         run: |
           nohup yarn workspace @ckb-lumos/testkit start &
@@ -47,12 +50,8 @@ jobs:
           | tr -d '\n' \
           | curl -H 'content-type: application/json' -d @- \
           http://localhost:8120
-      - name: Build and test
-        run: |
-          yarn
-          yarn lint
-          yarn build
-          yarn test-coverage
+      - name: Test
+        run: yarn test-coverage
       - uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
