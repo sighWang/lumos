@@ -17,11 +17,7 @@ test("subscribe cells", async (t) => {
   let blockIndex = 0;
   const stub = sinon.stub(indexer, "tip").callsFake(() => {
     const blocks = JSON.parse(
-      fs
-        .readFileSync(
-          path.join(__dirname, "../../indexer/tests/blocks_data.json")
-        )
-        .toString()
+      fs.readFileSync(path.join(__dirname, "./blocks_data.json")).toString()
     );
     const block = blocks[blockIndex];
     if (blockIndex !== 99) {
