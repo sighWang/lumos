@@ -31,10 +31,7 @@ jobs:
           chmod +x ./ckb-indexer
           rm -rf ckb-indexer-linux-x86_64.tar.gz
           rm ckb-indexer-$CKB_Indexer_Version-linux.zip
-      - name: Install ts-node
-        run: npm install -g ts-node
       - name: Install project dependencies
-        if: steps.yarn-cache.outputs.cache-hit != 'true' # Over here!
         run: yarn
       - name: Start test env
         run: |
