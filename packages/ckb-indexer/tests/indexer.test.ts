@@ -33,7 +33,7 @@ test("subscribe cells", async (t) => {
     let spy = sinon.spy();
     const eventEmitter = indexer.subscribe(queryCase.queryOption);
     eventEmitter.on("changed", spy);
-    await new Promise((resulve) => setTimeout(resulve, 10000));
+    await new Promise((resulve) => setTimeout(resulve, 90000));
     t.is(spy.callCount, queryCase.expectedResult, queryCase.desc);
     stub.resetHistory();
     blockIndex = 0;
