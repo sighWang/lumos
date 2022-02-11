@@ -1,6 +1,6 @@
 {
   "name": "@sighwang/rpc",
-  "version": "0.17.0-rc8.3",
+  "version": "0.17.0-rc8.4",
   "description": "RPC module for CKB",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/sighwang/lumos#readme",
@@ -42,9 +42,9 @@
     "url": "https://github.com/sighwang/lumos/issues"
   },
   "dependencies": {
-    "@sighwang/base": "^0.17.0-rc8.3",
-    "@sighwang/bi": "^0.17.0-rc8.3",
-    "@sighwang/toolkit": "^0.17.0-rc8.3"
+    "@sighwang/base": "^0.17.0-rc8.4",
+    "@sighwang/bi": "^0.17.0-rc8.4",
+    "@sighwang/toolkit": "^0.17.0-rc8.4"
   },
   "ava": {
     "extensions": [

@@ -1,6 +1,6 @@
 {
   "name": "@sighwang/lumos",
-  "version": "0.17.0-rc8.3",
+  "version": "0.17.0-rc8.4",
   "description": "A root package for Lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/sighwang/lumos#readme",
@@ -42,15 +42,15 @@
     "url": "https://github.com/sighwang/lumos/issues"
   },
   "dependencies": {
-    "@sighwang/base": "^0.17.0-rc8.3",
-    "@sighwang/bi": "^0.17.0-rc8.3",
-    "@sighwang/ckb-indexer": "^0.17.0-rc8.3",
-    "@sighwang/common-scripts": "^0.17.0-rc8.3",
-    "@sighwang/config-manager": "^0.17.0-rc8.3",
-    "@sighwang/hd": "^0.17.0-rc8.3",
-    "@sighwang/helpers": "^0.17.0-rc8.3",
-    "@sighwang/rpc": "^0.17.0-rc8.3",
-    "@sighwang/toolkit": "^0.17.0-rc8.3"
+    "@sighwang/base": "^0.17.0-rc8.4",
+    "@sighwang/bi": "^0.17.0-rc8.4",
+    "@sighwang/ckb-indexer": "^0.17.0-rc8.4",
+    "@sighwang/common-scripts": "^0.17.0-rc8.4",
+    "@sighwang/config-manager": "^0.17.0-rc8.4",
+    "@sighwang/hd": "^0.17.0-rc8.4",
+    "@sighwang/helpers": "^0.17.0-rc8.4",
+    "@sighwang/rpc": "^0.17.0-rc8.4",
+    "@sighwang/toolkit": "^0.17.0-rc8.4"
   },
   "devDependencies": {
     "buffer": "^6.0.3",

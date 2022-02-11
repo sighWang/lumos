@@ -1,6 +1,6 @@
 {
   "name": "@sighwang/ckb-indexer",
-  "version": "0.17.0-rc8.3",
+  "version": "0.17.0-rc8.4",
   "description": "CKB Indexer",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/sighwang/lumos#readme",
@@ -24,10 +24,10 @@
     "src"
   ],
   "dependencies": {
-    "@sighwang/base": "^0.17.0-rc8.3",
-    "@sighwang/bi": "^0.17.0-rc8.3",
-    "@sighwang/rpc": "^0.17.0-rc8.3",
-    "@sighwang/toolkit": "^0.17.0-rc8.3",
+    "@sighwang/base": "^0.17.0-rc8.4",
+    "@sighwang/bi": "^0.17.0-rc8.4",
+    "@sighwang/rpc": "^0.17.0-rc8.4",
+    "@sighwang/toolkit": "^0.17.0-rc8.4",
     "cross-fetch": "^3.1.4",
     "events": "^3.3.0"
   },
