@@ -1,6 +1,6 @@
 {
   "name": "@sighwang/bi",
-  "version": "0.17.0-rc8",
+  "version": "0.17.0-rc8.0",
   "description": "Bigint support in lumos",
   "author": "",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",

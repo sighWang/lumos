@@ -1,6 +1,6 @@
 {
   "name": "@sighwang/helpers",
-  "version": "0.17.0-rc8",
+  "version": "0.17.0-rc8.0",
   "description": "Helper functions for working with CKB",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
@@ -42,10 +42,10 @@
     "url": "https://github.com/nervosnetwork/lumos/issues"
   },
   "dependencies": {
-    "@sighwang/base": "^0.17.0-rc8",
-    "@sighwang/bi": "^0.17.0-rc8",
-    "@sighwang/config-manager": "^0.17.0-rc8",
-    "@sighwang/toolkit": "^0.17.0-rc8",
+    "@sighwang/base": "^0.17.0-rc8.0",
+    "@sighwang/bi": "^0.17.0-rc8.0",
+    "@sighwang/config-manager": "^0.17.0-rc8.0",
+    "@sighwang/toolkit": "^0.17.0-rc8.0",
     "bech32": "^1.1.4",
     "immutable": "^4.0.0-rc.12"
   },
