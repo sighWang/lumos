@@ -1,9 +1,14 @@
-import { Tip } from "@ckb-lumos/base";
+import { Tip } from "@sighwang/base";
 import test from "ava";
 import { RPC } from "../src";
 const indexUri = "http://127.0.0.1:8120";
 const rpc = new RPC(indexUri);
-
+test.before(() => {
+  // @ts-ignore: Unreachable code error
+  BigInt = () => {
+    throw new Error("can not find bigint");
+  };
+});
 test("get tip", async (t) => {
   const expectTip: Tip = {
     block_hash:

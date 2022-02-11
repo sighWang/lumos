@@ -8,8 +8,9 @@ import {
   HexNumber,
   Output,
   TransactionWithStatus,
-} from "@ckb-lumos/base";
+} from "@sighwang/base";
 import { EventEmitter } from "events";
+import { BIish } from "@sighwang/bi";
 
 export type ScriptType = "type" | "lock";
 export type Order = "asc" | "desc";
@@ -106,7 +107,7 @@ export class IndexerEmitter extends EventEmitter {
   type?: Script;
   outputData?: HexString | "any";
   argsLen?: number | "any";
-  fromBlock?: bigint;
+  fromBlock?: BIish;
 }
 
 export interface OtherQueryOptions {

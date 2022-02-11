@@ -1,4 +1,4 @@
-import { HashType } from "@ckb-lumos/base";
+import { HashType } from "@sighwang/base";
 import { IOType } from "../src/type";
 
 export const queryOption = {

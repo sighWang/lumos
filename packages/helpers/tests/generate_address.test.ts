@@ -5,13 +5,20 @@ import {
   generateSecp256k1Blake160MultisigAddress,
   scriptToAddress,
 } from "../src";
-import { predefined } from "@ckb-lumos/config-manager";
+import { predefined } from "@sighwang/config-manager";
 const { LINA, AGGRON4 } = predefined;
 import {
   shortAddressInfo,
   multisigAddressInfo,
   fullAddressInfo,
 } from "./addresses";
+
+test.before(() => {
+  // @ts-ignore: Unreachable code error
+  BigInt = () => {
+    throw new Error("can not find bigint");
+  };
+});
 
 test("short address, mainnet", (t) => {
   const address = generateAddress(shortAddressInfo.script, { config: LINA });

@@ -6,12 +6,19 @@ const {
   cellCollectorTestCases,
   queryWithBlockHash,
 } = require("./test_cases.js");
-import { HashType } from "@ckb-lumos/base";
+import { HashType } from "@sighwang/base";
 import { OtherQueryOptions } from "../src/type";
 
 const nodeUri = "http://127.0.0.1:8118/rpc";
 const indexUri = "http://127.0.0.1:8120";
 const indexer = new Indexer(indexUri, nodeUri);
+
+test.before(() => {
+  // @ts-ignore: Unreachable code error
+  BigInt = () => {
+    throw new Error("can not find bigint");
+  };
+});
 
 test("get count correct", async (t) => {
   const type = {

@@ -1,4 +1,4 @@
-import { RPC as ToolkitRPC } from "ckb-js-toolkit";
+import { RPC as ToolkitRPC } from "@sighwang/toolkit";
 import {
   Alert,
   BannedAddr,
@@ -25,7 +25,8 @@ import {
   TxPoolIds,
   TxPoolInfo,
   TxPoolVerbosity,
-} from "@ckb-lumos/base";
+} from "@sighwang/base";
+import { BI } from "@sighwang/bi";
 
 export type SerializedBlock = HexString;
 export type SerializedHeader = HexString;
@@ -85,12 +86,11 @@ class RpcProxy {
       return;
     }
     const header: Header = await this.rpc.get_tip_header();
-    const blockNumber = BigInt(header.number);
+    const blockNumber = BI.from(header.number);
     while (true) {
       const tip = await this.indexer.tip();
       if (tip) {
-        const indexedNumber = BigInt(tip.block_number);
-        if (blockNumber - indexedNumber <= this.blockDifference) {
+        if (blockNumber.sub(tip.block_number).lte(this.blockDifference)) {
           // TODO: do we need to handle forks?
           break;
         }

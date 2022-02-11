@@ -1,8 +1,14 @@
 const test = require("ava");
-const { normalizers } = require("ckb-js-toolkit");
+const { normalizers } = require("@sighwang/toolkit");
 
 const core = require("../lib/core");
 const denormalizers = require("../lib/denormalizers");
+
+test.before(() => {
+  BigInt = () => {
+    throw new Error("can not find bigint");
+  };
+});
 
 test("denormalize script", (t) => {
   const script = {

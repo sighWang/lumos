@@ -1,4 +1,4 @@
-const { validators } = require("ckb-js-toolkit");
+const { validators } = require("@sighwang/toolkit");
 const utils = require("./utils");
 
 // Notice this TransactionCollector implementation only uses indexer

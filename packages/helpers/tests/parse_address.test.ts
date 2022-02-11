@@ -5,8 +5,15 @@ import {
   multisigAddressInfo,
   fullAddressInfo,
 } from "./addresses";
-import { predefined } from "@ckb-lumos/config-manager";
+import { predefined } from "@sighwang/config-manager";
 const { LINA, AGGRON4 } = predefined;
+
+test.before(() => {
+  // @ts-ignore: Unreachable code error
+  BigInt = () => {
+    throw new Error("can not find bigint");
+  };
+});
 
 test("short address, mainnet", (t) => {
   const script = parseAddress(shortAddressInfo.mainnetAddress, {

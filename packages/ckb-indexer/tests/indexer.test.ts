@@ -7,16 +7,17 @@ import { Indexer } from "../src";
 const nodeUri = "http://127.0.0.1:8118/rpc";
 const indexUri = "http://127.0.0.1:8120";
 const indexer = new Indexer(indexUri, nodeUri);
-
+test.before(() => {
+  // @ts-ignore: Unreachable code error
+  BigInt = () => {
+    throw new Error("can not find bigint");
+  };
+});
 test("subscribe cells", async (t) => {
   let blockIndex = 0;
   const stub = sinon.stub(indexer, "tip").callsFake(() => {
     const blocks = JSON.parse(
-      fs
-        .readFileSync(
-          path.join(__dirname, "../../indexer/tests/blocks_data.json")
-        )
-        .toString()
+      fs.readFileSync(path.join(__dirname, "./blocks_data.json")).toString()
     );
     const block = blocks[blockIndex];
     if (blockIndex !== 99) {
@@ -32,7 +33,7 @@ test("subscribe cells", async (t) => {
     let spy = sinon.spy();
     const eventEmitter = indexer.subscribe(queryCase.queryOption);
     eventEmitter.on("changed", spy);
-    await new Promise((resulve) => setTimeout(resulve, 10000));
+    await new Promise((resulve) => setTimeout(resulve, 90000));
     t.is(spy.callCount, queryCase.expectedResult, queryCase.desc);
     stub.resetHistory();
     blockIndex = 0;

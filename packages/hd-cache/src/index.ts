@@ -9,14 +9,12 @@ import {
   CellCollector as CellCollectorInterface,
   helpers,
   utils,
-} from "@ckb-lumos/base";
-import {
-  TransactionCollector as TxCollector,
   Indexer,
-} from "@ckb-lumos/indexer";
+} from "@sighwang/base";
+import { TransactionCollector as TxCollector } from "@sighwang/ckb-indexer";
 import { Map, Set } from "immutable";
-import { Config, getConfig } from "@ckb-lumos/config-manager";
-import { RPC } from "@ckb-lumos/rpc";
+import { Config, getConfig } from "@sighwang/config-manager";
+import { RPC } from "@sighwang/rpc";
 import {
   AccountExtendedPublicKey,
   AddressType,
@@ -24,8 +22,9 @@ import {
   key,
   Keystore,
   mnemonic,
-} from "@ckb-lumos/hd";
-import { assertPublicKey, assertChainCode } from "@ckb-lumos/hd/lib/helper";
+} from "@sighwang/hd";
+import { assertPublicKey, assertChainCode } from "@sighwang/hd/lib/helper";
+import { BI } from "@sighwang/bi";
 const { isCellMatchQueryOptions } = helpers;
 const { publicKeyToBlake160 } = key;
 const { mnemonicToSeedSync } = mnemonic;
@@ -368,7 +367,7 @@ export class Cache {
   public readonly txCache: TransactionCache;
   private indexer: Indexer;
 
-  private lastTipBlockNumber: bigint = 0n;
+  private lastTipBlockNumber: BI = BI.from(0);
   private TransactionCollector: any;
 
   private rpc: RPC;
@@ -406,7 +405,7 @@ export class Cache {
     return t.block_number;
   }
 
-  private async innerLoopTransactions(fromBlock: bigint, toBlock: bigint) {
+  private async innerLoopTransactions(fromBlock: BI, toBlock: BI) {
     for (const lockScriptInfo of this.hdCache.getLockScriptInfos()) {
       const lockScript: Script = lockScriptInfo.lockScript;
       const transactionCollector = new this.TransactionCollector(
@@ -440,12 +439,12 @@ export class Cache {
   }
 
   private async loopTransactions(tipBlockNumber: HexString) {
-    const tip: bigint = BigInt(tipBlockNumber);
-    if (tip <= this.lastTipBlockNumber) {
+    const tip: BI = BI.from(tipBlockNumber);
+    if (tip.lte(this.lastTipBlockNumber)) {
       return;
     }
 
-    await this.innerLoopTransactions(this.lastTipBlockNumber + 1n, tip);
+    await this.innerLoopTransactions(this.lastTipBlockNumber.add(1), tip);
     this.lastTipBlockNumber = tip;
   }
 
@@ -767,9 +766,9 @@ export class CellCollectorWithQueryOptions implements CellCollectorInterface {
 export async function getBalance(
   cellCollector: CellCollectorInterface
 ): Promise<HexString> {
-  let balance: bigint = 0n;
+  let balance: BI = BI.from(0);
   for await (const cell of cellCollector.collect()) {
-    balance += BigInt(cell.cell_output.capacity);
+    balance = balance.add(cell.cell_output.capacity);
   }
   return "0x" + balance.toString(16);
 }

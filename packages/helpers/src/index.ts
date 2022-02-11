@@ -10,11 +10,12 @@ import {
   PackedSince,
   Transaction,
   WitnessArgs,
-} from "@ckb-lumos/base";
+} from "@sighwang/base";
 import * as bech32 from "bech32";
-import { normalizers, validators, Reader } from "ckb-js-toolkit";
+import { normalizers, validators, Reader } from "@sighwang/toolkit";
 import { List, Record, Map as ImmutableMap } from "immutable";
-import { getConfig, Config } from "@ckb-lumos/config-manager";
+import { getConfig, Config } from "@sighwang/config-manager";
+import { BI } from "@sighwang/bi";
 
 export interface Options {
   config?: Config;
@@ -45,6 +46,14 @@ export function minimalCellCapacity(
   fullCell: Cell,
   { validate = true }: { validate?: boolean } = {}
 ): bigint {
+  const result = minimalCellCapacityCompatible(fullCell, { validate });
+  return BigInt(result.toString());
+}
+
+export function minimalCellCapacityCompatible(
+  fullCell: Cell,
+  { validate = true }: { validate?: boolean } = {}
+): BI {
   if (validate) {
     validators.ValidateCellOutput(fullCell.cell_output);
   }
@@ -62,7 +71,7 @@ export function minimalCellCapacity(
   if (fullCell.data) {
     bytes += new Reader(fullCell.data).length();
   }
-  return BigInt(bytes) * BigInt(100000000);
+  return BI.from(bytes).mul(100000000);
 }
 
 export function locateCellDep(

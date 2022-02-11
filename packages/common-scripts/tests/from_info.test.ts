@@ -2,8 +2,8 @@ import test from "ava";
 import { serializeMultisigScript, multisigArgs } from "../src/from_info";
 import { bob } from "./account_info";
 import { parseFromInfo } from "../src";
-import { predefined } from "@ckb-lumos/config-manager";
-import { parseAddress } from "@ckb-lumos/helpers";
+import { predefined } from "@sighwang/config-manager";
+import { parseAddress } from "@sighwang/helpers";
 const { AGGRON4 } = predefined;
 
 // from https://github.com/nervosnetwork/rfcs/blob/v2020.01.15/rfcs/0021-ckb-address-format/0021-ckb-address-format.md
@@ -17,6 +17,13 @@ const multiInfo = {
   ],
   multisigArgs: "0x4fb2be2e5d0c1a3b8694f832350a33c1685d477a",
 };
+
+test.before(() => {
+  // @ts-ignore: Unreachable code error
+  BigInt = () => {
+    throw new Error("can not find bigint");
+  };
+});
 
 test("multisigArgs, single", (t) => {
   const serialized = serializeMultisigScript(bob.fromInfo);
