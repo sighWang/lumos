@@ -1,6 +1,6 @@
 {
   "name": "@sighwang/config-manager",
-  "version": "0.17.0-rc8.4",
+  "version": "0.17.0-rc8.5",
   "description": "Config manager for lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/sighwang/lumos#readme",
@@ -41,8 +41,8 @@
     "url": "https://github.com/sighwang/lumos/issues"
   },
   "dependencies": {
-    "@sighwang/base": "^0.17.0-rc8.4",
-    "@sighwang/bi": "^0.17.0-rc8.4",
+    "@sighwang/base": "^0.17.0-rc8.5",
+    "@sighwang/bi": "^0.17.0-rc8.5",
     "@types/deep-freeze-strict": "^1.1.0",
     "deep-freeze-strict": "^1.1.1"
   }

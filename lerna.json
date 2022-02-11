@@ -4,12 +4,11 @@
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "0.17.0-rc8.4",
+  "version": "0.17.0-rc8.5",
   "command": {
     "publish": {
       "access": "public",
-      "registry": "https://npm.pkg.github.com",
-      "graphType": "all"
+      "registry": "https://npm.pkg.github.com"
     }
   }
 }
