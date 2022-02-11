@@ -1,9 +1,9 @@
 {
   "name": "@sighwang/rpc",
-  "version": "0.17.0-rc8.3",
+  "version": "0.17.0-rc8.4",
   "description": "RPC module for CKB",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
-  "homepage": "https://github.com/nervosnetwork/lumos#readme",
+  "homepage": "https://github.com/sighwang/lumos#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,7 +25,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nervosnetwork/lumos.git"
+    "url": "git+https://github.com/sighwang/lumos.git"
   },
   "scripts": {
     "fmt": "prettier --write \"{src,tests}/**/*.ts\" package.json",
@@ -39,12 +39,12 @@
     "release": "npm publish"
   },
   "bugs": {
-    "url": "https://github.com/nervosnetwork/lumos/issues"
+    "url": "https://github.com/sighwang/lumos/issues"
   },
   "dependencies": {
-    "@sighwang/base": "^0.17.0-rc8.3",
-    "@sighwang/bi": "^0.17.0-rc8.3",
-    "@sighwang/toolkit": "^0.17.0-rc8.3"
+    "@sighwang/base": "^0.17.0-rc8.4",
+    "@sighwang/bi": "^0.17.0-rc8.4",
+    "@sighwang/toolkit": "^0.17.0-rc8.4"
   },
   "ava": {
     "extensions": [
