@@ -6,10 +6,10 @@ import {
   parseAddress,
   TransactionSkeleton,
   TransactionSkeletonType,
-} from "@ckb-lumos/helpers";
-import { Cell, Transaction, values, Script } from "@ckb-lumos/base";
+} from "@sighwang/helpers";
+import { Cell, Transaction, values, Script } from "@sighwang/base";
 import { anyoneCanPay, parseFromInfo } from "../src";
-import { Config, predefined } from "@ckb-lumos/config-manager";
+import { Config, predefined } from "@sighwang/config-manager";
 const { AGGRON4, LINA } = predefined;
 
 import {
@@ -22,7 +22,7 @@ import {
 } from "./inputs";
 import { bob, alice } from "./account_info";
 import { List } from "immutable";
-import { BI } from "@ckb-lumos/bi";
+import { BI } from "@sighwang/bi";
 
 const aliceAddress = "ckt1qyqwyxfa75whssgkq9ukkdd30d8c7txct0gqfvmy2v";
 

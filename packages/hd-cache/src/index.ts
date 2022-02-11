@@ -10,11 +10,11 @@ import {
   helpers,
   utils,
   Indexer,
-} from "@ckb-lumos/base";
-import { TransactionCollector as TxCollector } from "@ckb-lumos/ckb-indexer";
+} from "@sighwang/base";
+import { TransactionCollector as TxCollector } from "@sighwang/ckb-indexer";
 import { Map, Set } from "immutable";
-import { Config, getConfig } from "@ckb-lumos/config-manager";
-import { RPC } from "@ckb-lumos/rpc";
+import { Config, getConfig } from "@sighwang/config-manager";
+import { RPC } from "@sighwang/rpc";
 import {
   AccountExtendedPublicKey,
   AddressType,
@@ -22,9 +22,9 @@ import {
   key,
   Keystore,
   mnemonic,
-} from "@ckb-lumos/hd";
-import { assertPublicKey, assertChainCode } from "@ckb-lumos/hd/lib/helper";
-import { BI } from "@ckb-lumos/bi";
+} from "@sighwang/hd";
+import { assertPublicKey, assertChainCode } from "@sighwang/hd/lib/helper";
+import { BI } from "@sighwang/bi";
 const { isCellMatchQueryOptions } = helpers;
 const { publicKeyToBlake160 } = key;
 const { mnemonicToSeedSync } = mnemonic;

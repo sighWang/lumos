@@ -1,4 +1,4 @@
-# `@ckb-lumos/base`
+# `@sighwang/base`
 
 Test toolkit for testing CKB dApps
 

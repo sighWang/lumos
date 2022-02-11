@@ -1,5 +1,5 @@
-import { RPC as ToolkitRPC } from "@ckb-lumos/toolkit";
-import { HexString, Tip } from "@ckb-lumos/base";
+import { RPC as ToolkitRPC } from "@sighwang/toolkit";
+import { HexString, Tip } from "@sighwang/base";
 import {
   GetCellsResults,
   GetTransactionsResults,

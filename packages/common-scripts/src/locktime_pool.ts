@@ -3,7 +3,7 @@ import {
   Options,
   TransactionSkeletonType,
   minimalCellCapacityCompatible,
-} from "@ckb-lumos/helpers";
+} from "@sighwang/helpers";
 import { FromInfo, parseFromInfo } from "./from_info";
 import secp256k1Blake160 from "./secp256k1_blake160";
 import {
@@ -26,10 +26,10 @@ import {
   QueryOptions,
   CellCollector as CellCollectorType,
   SinceValidationInfo,
-} from "@ckb-lumos/base";
+} from "@sighwang/base";
 const { toBigUInt64LE, readBigUInt64LECompatible, readBigUInt64LE } = utils;
 const { ScriptValue } = values;
-import { normalizers, Reader } from "@ckb-lumos/toolkit";
+import { normalizers, Reader } from "@sighwang/toolkit";
 import {
   generateDaoScript,
   isSecp256k1Blake160MultisigScript,
@@ -45,11 +45,11 @@ const {
   validateSince,
 } = sinceUtils;
 import { List, Set } from "immutable";
-import { getConfig, Config } from "@ckb-lumos/config-manager";
-import { RPC } from "@ckb-lumos/rpc";
+import { getConfig, Config } from "@sighwang/config-manager";
+import { RPC } from "@sighwang/rpc";
 import { secp256k1Blake160Multisig } from ".";
-import { parseSinceCompatible } from "@ckb-lumos/base/lib/since";
-import { BI, BIish } from "@ckb-lumos/bi";
+import { parseSinceCompatible } from "@sighwang/base/lib/since";
+import { BI, BIish } from "@sighwang/bi";
 
 export interface LocktimeCell extends Cell {
   since: PackedSince;

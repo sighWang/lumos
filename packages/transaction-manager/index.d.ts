@@ -5,7 +5,7 @@ import {
   logger,
   Indexer,
   CellCollector,
-} from "@ckb-lumos/base";
+} from "@sighwang/base";
 
 declare class TransactionManager {
   constructor(

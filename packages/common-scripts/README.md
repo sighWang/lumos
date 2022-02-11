@@ -1,4 +1,4 @@
-# `@ckb-lumos/common-scripts`
+# `@sighwang/common-scripts`
 
 Common script implementation for lumos. Includes `secp256k1_blake2b` lock script, `secp256k1_blake160_multisig` lock script, `dao` type script, `sudt` type script now.
 
@@ -15,27 +15,31 @@ Common script implementation for lumos. Includes `secp256k1_blake2b` lock script
 Following script will show how to use `common` script to transfer capacity to another address. `secp256k1_blake160`, `secp256k1_blake160_multisig` and `locktime_pool` script are similar to `common`, and `common` maybe a better choose.
 
 ```javascript
-const { common } = require('@ckb-lumos/common-scripts');
-const { sealTransaction } = require("@ckb-lumos/helpers")
-const { Indexer } = require("@ckb-lumos/ckb-indexer")
+const { common } = require("@sighwang/common-scripts");
+const { sealTransaction } = require("@sighwang/helpers");
+const { Indexer } = require("@sighwang/ckb-indexer");
 
 // We can use Indexer module as cell provider
 const indexer = new Indexer("http://127.0.0.1:8114");
 
 const tipHeader = {
-  compact_target: '0x20010000',
-  dao: '0x49bfb20771031d556c8480d47f2a290059f0ac7e383b6509006f4a772ed50200',
-  epoch: '0xa0006002b18',
-  hash: '0x432451e23c26f45eaceeedcc261764d6485ea5c9a204ac55ad755bb8dec9a079',
-  nonce: '0x8199548f8a5ac7a0f0caef1620f37b79',
-  number: '0x1aef6',
-  parent_hash: '0x63594a64108f19f6aed53d0dca9ab4075aac4379cb80b2097b0deac8fc16fd3b',
-  proposals_hash: '0x0000000000000000000000000000000000000000000000000000000000000000',
-  timestamp: '0x172f6b9a4cf',
-  transactions_root: '0x282dbadcd49f3e229d997875f37f4e4f19cb4f04fcf762e9639145aaa667b6f8',
-  uncles_hash: '0x0000000000000000000000000000000000000000000000000000000000000000',
-  version: '0x0'
-}
+  compact_target: "0x20010000",
+  dao: "0x49bfb20771031d556c8480d47f2a290059f0ac7e383b6509006f4a772ed50200",
+  epoch: "0xa0006002b18",
+  hash: "0x432451e23c26f45eaceeedcc261764d6485ea5c9a204ac55ad755bb8dec9a079",
+  nonce: "0x8199548f8a5ac7a0f0caef1620f37b79",
+  number: "0x1aef6",
+  parent_hash:
+    "0x63594a64108f19f6aed53d0dca9ab4075aac4379cb80b2097b0deac8fc16fd3b",
+  proposals_hash:
+    "0x0000000000000000000000000000000000000000000000000000000000000000",
+  timestamp: "0x172f6b9a4cf",
+  transactions_root:
+    "0x282dbadcd49f3e229d997875f37f4e4f19cb4f04fcf762e9639145aaa667b6f8",
+  uncles_hash:
+    "0x0000000000000000000000000000000000000000000000000000000000000000",
+  version: "0x0",
+};
 
 const fromInfos = [
   "ckb1qyqwyxfa75whssgkq9ukkdd30d8c7txct0gq5f9mxs",
@@ -44,9 +48,9 @@ const fromInfos = [
     M: 1,
     publicKeyHashes: ["0x36c329ed630d6ce750712a477543672adab57f4c"],
   },
-]
+];
 
-let txSkeleton = TransactionSkeleton({ cellProvider: indexer })
+let txSkeleton = TransactionSkeleton({ cellProvider: indexer });
 
 // If using secp256k1_blake160_multisig lock script, put MultisigScript to `fromInfos` for generate signing messages.
 // By default, `common.transfer` will use cells with locktime firstly. `tipHeader` is required when you want to spent cells with locktime.
@@ -55,8 +59,8 @@ txSkeleton = await common.transfer(
   fromInfos,
   "ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd",
   BigInt(3500 * 10 ** 8),
-  tipHeader,
-)
+  tipHeader
+);
 
 // Or you want to use cells without locktime firstly.
 txSkeleton = await common.transfer(
@@ -66,26 +70,24 @@ txSkeleton = await common.transfer(
   BigInt(3500 * 10 ** 8),
   tipHeader,
   { useLocktimeCellsFirst: false }
-)
+);
 
 // When you want to pay fee for transaction, just call `payFee`.
 txSkeleton = await common.payFee(
   txSkeleton,
   fromInfos,
-  BigInt(1*10**8),
-  tipHeader,
-)
+  BigInt(1 * 10 ** 8),
+  tipHeader
+);
 
 // `prepareSigningEntries` will generate message for signing.
 // Signing messages will fill in `txSkeleton.signingEntries`.
-txSkeleton = await common.prepareSigningEntries(
-  txSkeleton
-)
+txSkeleton = await common.prepareSigningEntries(txSkeleton);
 
 // Then you can sign messages in order and get contents.
 // NOTE: lumos not provided tools for generate signatures now.
 // Call `sealTransaction` to get a transaction.
-const tx = sealTransaction(txSkeleton, contents)
+const tx = sealTransaction(txSkeleton, contents);
 
 // Then you can send tx to a CKB node via RPC `send_transaction`.
 ```
@@ -93,42 +95,39 @@ const tx = sealTransaction(txSkeleton, contents)
 Following script will show how to use `DAO` script.
 
 ```javascript
-const { dao } = require("@ckb-lumos/common-scripts")
+const { dao } = require("@sighwang/common-scripts");
 
-let txSkeleton = TransactionSkeleton({ cellProvider: indexer })
+let txSkeleton = TransactionSkeleton({ cellProvider: indexer });
 
 // First, deposit capacity to dao.
 txSkeleton = await dao.deposit(
   txSkeleton,
   "ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd", // will gather inputs from this address.
   "ckb1qyqwyxfa75whssgkq9ukkdd30d8c7txct0gq5f9mxs", // will generate a dao cell with lock of this address.
-  BigInt(1000*10**8),
-)
+  BigInt(1000 * 10 ** 8)
+);
 
 // Using `listDaoCells` to list all deposited cells.
 const daoDepositedCells = await dao.listDaoCells(
   indexer,
   "ckb1qyqwyxfa75whssgkq9ukkdd30d8c7txct0gq5f9mxs",
-  "deposit",
-)
+  "deposit"
+);
 
 // Or using `CellCollector`
 const daoDepositedCellCollector = new dao.CellCollector(
   "ckb1qyqwyxfa75whssgkq9ukkdd30d8c7txct0gq5f9mxs",
   indexer,
-  "deposit",
-)
+  "deposit"
+);
 
 for await (const inputCell of daoDepositedCellCollector.collect()) {
-  console.log(inputCell)
+  console.log(inputCell);
 }
 
 // And pick one to withdraw.
 // `fromInfo` only required for multisig script.
-txSkeleton = await dao.withdraw(
-  txSkeleton,
-  daoDepositedCells[0],
-)
+txSkeleton = await dao.withdraw(txSkeleton, daoDepositedCells[0]);
 
 // Then if want to unlock dao withdrew cells, just use `common.transfer`.
 ```
@@ -136,34 +135,41 @@ txSkeleton = await dao.withdraw(
 Following script will show how to use `sUDT` script.
 
 ```javascript
-const { sudt } = require("@ckb-lumos/common-scripts")
-let txSkeleton = TransactionSkeleton({ cellProvider: indexer })
+const { sudt } = require("@sighwang/common-scripts");
+let txSkeleton = TransactionSkeleton({ cellProvider: indexer });
 
 // issue an sudt token, will use the second param address to generate sudt token(it's lock hash).
 txSkeleton = await sudt.issueToken(
   txSkeleton,
   "ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd",
-  10000n,
+  10000n
 );
 
 // and transfer sUDT
-const sudtToken = "0x1f2615a8dde4e28ca736ff763c2078aff990043f4cbf09eb4b3a58a140a0862d"
+const sudtToken =
+  "0x1f2615a8dde4e28ca736ff763c2078aff990043f4cbf09eb4b3a58a140a0862d";
 txSkeleton = await sudt.transfer(
   txSkeleton,
   ["ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd"],
   sudtToken,
   "ckb1qyqwyxfa75whssgkq9ukkdd30d8c7txct0gq5f9mxs",
   1000n,
-  "ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd",
+  "ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd"
 );
 ```
 
 Following script will show how to use `deploy` script.
+
 ```javascript
-const { generateDeployWithDataTx, generateDeployWithTypeIdTx, generateUpgradeTypeIdDataTx, payFee } = require("@ckb-lumos/common-scripts");
-const { Indexer } = require("@ckb-lumos/ckb-indexer");
-const { initializeConfig, predefined } = require("@ckb-lumos/config-manager");
-const { parseAddress } = require("@ckb-lumos/helpers");
+const {
+  generateDeployWithDataTx,
+  generateDeployWithTypeIdTx,
+  generateUpgradeTypeIdDataTx,
+  payFee,
+} = require("@sighwang/common-scripts");
+const { Indexer } = require("@sighwang/ckb-indexer");
+const { initializeConfig, predefined } = require("@sighwang/config-manager");
+const { parseAddress } = require("@sighwang/helpers");
 
 initializeConfig(predefined.AGGRON4);
 
@@ -181,7 +187,7 @@ let deployOptions = {
   cellProvider: indexer,
   scriptBinary: scriptBinary,
   outputScriptLock: outputScriptLock,
-}
+};
 
 // Ganarate txSkeleton for deploying with data.
 let txSkeleton = await generateDeployWithDataTx(deployOptions);
@@ -192,19 +198,19 @@ let txSkeleton = await generateDeployWithTypeIdTx(deployOptions);
 txSkeleton = await payFee(txSkeleton, address, txFee);
 // Then you can sign and seal the transaction for sending.
 
-
 // To upgrade a contract with Type ID, add its Type ID to deployOptions.
 const typeId = {
-  code_hash: '0x00000000000000000000000000000000000000000000000000545950455f4944',
-  hash_type: 'type',
-  args: '0x7abcd9f949a16b40ff5b50b56e62d2a6a007e544d8491bb56476693b6c45fd27'
-}
+  code_hash:
+    "0x00000000000000000000000000000000000000000000000000545950455f4944",
+  hash_type: "type",
+  args: "0x7abcd9f949a16b40ff5b50b56e62d2a6a007e544d8491bb56476693b6c45fd27",
+};
 const upgradeOptions = {
   cellProvider: cellProvider,
   scriptBinary: scriptBinary,
   outputScriptLock: outputScriptLock,
-  typeId: typeId
-}
+  typeId: typeId,
+};
 // Ganarate txSkeleton for upgrading.
 let upgradeTxSkeleton = await generateUpgradeTypeIdDataTx(upgradeOptions);
 ```

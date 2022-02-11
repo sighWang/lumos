@@ -4,7 +4,7 @@ import {
   Output,
   OutPoint,
   TransactionWithStatus,
-} from "@ckb-lumos/base";
+} from "@sighwang/base";
 import {
   SearchKeyFilter,
   CKBIndexerQueryOptions,

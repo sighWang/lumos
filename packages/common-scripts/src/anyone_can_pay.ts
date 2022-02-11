@@ -12,8 +12,8 @@ import {
   utils,
   values,
   WitnessArgs,
-} from "@ckb-lumos/base";
-import { Config, getConfig } from "@ckb-lumos/config-manager";
+} from "@sighwang/base";
+import { Config, getConfig } from "@sighwang/config-manager";
 import {
   createTransactionFromSkeleton,
   generateAddress,
@@ -21,10 +21,10 @@ import {
   Options,
   parseAddress,
   TransactionSkeletonType,
-} from "@ckb-lumos/helpers";
-import { normalizers, Reader } from "@ckb-lumos/toolkit";
+} from "@sighwang/helpers";
+import { normalizers, Reader } from "@sighwang/toolkit";
 import { List, Set } from "immutable";
-import { BI, BIish } from "@ckb-lumos/bi";
+import { BI, BIish } from "@sighwang/bi";
 import { FromInfo, parseFromInfo } from "./from_info";
 import {
   addCellDep,
