@@ -1,6 +1,6 @@
 {
   "name": "@sighwang/lumos",
-  "version": "0.17.0-rc8.2",
+  "version": "0.17.0-rc8.3",
   "description": "A root package for Lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/nervosnetwork/lumos#readme",
@@ -35,22 +35,22 @@
     "build:js": "babel --root-mode upward src --out-dir lib --extensions .ts -s",
     "build:umd": "webpack",
     "clean": "rm -rf lib",
-    "prepublishOnly": "yarn run clean && yarn run build && yarn run build:umd",
+    "prepublishOnly": "yarn run clean && yarn run build",
     "release": "npm publish"
   },
   "bugs": {
     "url": "https://github.com/nervosnetwork/lumos/issues"
   },
   "dependencies": {
-    "@sighwang/base": "^0.17.0-rc8.2",
-    "@sighwang/bi": "^0.17.0-rc8.2",
-    "@sighwang/ckb-indexer": "^0.17.0-rc8.2",
-    "@sighwang/common-scripts": "^0.17.0-rc8.2",
-    "@sighwang/config-manager": "^0.17.0-rc8.2",
-    "@sighwang/hd": "^0.17.0-rc8.2",
-    "@sighwang/helpers": "^0.17.0-rc8.2",
-    "@sighwang/rpc": "^0.17.0-rc8.2",
-    "@sighwang/toolkit": "^0.17.0-rc8.2"
+    "@sighwang/base": "^0.17.0-rc8.3",
+    "@sighwang/bi": "^0.17.0-rc8.3",
+    "@sighwang/ckb-indexer": "^0.17.0-rc8.3",
+    "@sighwang/common-scripts": "^0.17.0-rc8.3",
+    "@sighwang/config-manager": "^0.17.0-rc8.3",
+    "@sighwang/hd": "^0.17.0-rc8.3",
+    "@sighwang/helpers": "^0.17.0-rc8.3",
+    "@sighwang/rpc": "^0.17.0-rc8.3",
+    "@sighwang/toolkit": "^0.17.0-rc8.3"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
