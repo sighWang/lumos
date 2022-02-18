@@ -61,5 +61,6 @@
     "@types/bn.js": "^4.11.6",
     "@types/elliptic": "^6.4.12",
     "@types/uuid": "^8.3.0"
-  }
+  },
+  "gitHead": "54457b253c46c52e5d36b8f2f7d2fc62cd7167e5"
 }

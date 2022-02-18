@@ -40,5 +40,6 @@
     "@ximingwang/ckb-indexer": "^0.17.0-rc8.10",
     "@ximingwang/toolkit": "^0.17.0-rc8.10",
     "immutable": "^4.0.0-rc.12"
-  }
+  },
+  "gitHead": "54457b253c46c52e5d36b8f2f7d2fc62cd7167e5"
 }
