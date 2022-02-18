@@ -1,6 +1,6 @@
 {
   "name": "@ximingwang/helpers",
-  "version": "0.17.0-rc8.10",
+  "version": "0.17.0-rc8.11",
   "description": "Helper functions for working with CKB",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/ximingwang/lumos#readme",
@@ -42,10 +42,10 @@
     "url": "https://github.com/ximingwang/lumos/issues"
   },
   "dependencies": {
-    "@ximingwang/base": "^0.17.0-rc8.10",
-    "@ximingwang/bi": "^0.17.0-rc8.10",
-    "@ximingwang/config-manager": "^0.17.0-rc8.10",
-    "@ximingwang/toolkit": "^0.17.0-rc8.10",
+    "@ximingwang/base": "^0.17.0-rc8.11",
+    "@ximingwang/bi": "^0.17.0-rc8.11",
+    "@ximingwang/config-manager": "^0.17.0-rc8.11",
+    "@ximingwang/toolkit": "^0.17.0-rc8.11",
     "bech32": "^1.1.4",
     "immutable": "^4.0.0-rc.12"
   },
