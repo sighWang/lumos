@@ -38,7 +38,7 @@ cd packages/bi
 yarn link
 
 cd /path/to/my/proj
-yarn link @ckb-lumos/bi
+yarn link @ximingwang/bi
 ```
 
 ### package.json
@@ -46,7 +46,7 @@ yarn link @ckb-lumos/bi
 ```json
 {
   "resolutions": {
-    "@ckb-lumos": "x.y.z"
+    "@ximingwang": "x.y.z"
   }
 }
 ```

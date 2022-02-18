@@ -1,7 +1,7 @@
-import { TransactionSkeletonType } from "@ckb-lumos/helpers";
-import { Cell, CellDep, core } from "@ckb-lumos/base";
-import { TransactionSkeleton } from "@ckb-lumos/helpers";
-import { Reader, normalizers } from "@ckb-lumos/toolkit";
+import { TransactionSkeletonType } from "@ximingwang/helpers";
+import { Cell, CellDep, core } from "@ximingwang/base";
+import { TransactionSkeleton } from "@ximingwang/helpers";
+import { Reader, normalizers } from "@ximingwang/toolkit";
 
 export interface txObject {
   inputs: Cell[];
