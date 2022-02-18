@@ -5,7 +5,7 @@ import {
   multisigAddressInfo,
   fullAddressInfo,
 } from "./addresses";
-import { predefined } from "@sighwang/config-manager";
+import { predefined } from "@ximingwang/config-manager";
 const { LINA, AGGRON4 } = predefined;
 
 test.before(() => {

@@ -1,4 +1,4 @@
-# `@sighwang/hd-cache`
+# `@ximingwang/hd-cache`
 
 HD Cache manager for lumos.
 
@@ -10,8 +10,8 @@ const {
   CellCollector,
   CellCollectorWithQueryOptions,
   getBalance,
-} = require("@sighwang/hd-cache");
-const { Indexer } = require("@sighwang/ckb-indexer");
+} = require("@ximingwang/hd-cache");
+const { Indexer } = require("@ximingwang/ckb-indexer");
 const indexer = new Indexer("http://localhost:8114");
 const cacheManger = CacheManager.loadFromKeystore(
   indexer,

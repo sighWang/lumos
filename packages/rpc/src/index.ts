@@ -1,4 +1,4 @@
-import { RPC as ToolkitRPC } from "@sighwang/toolkit";
+import { RPC as ToolkitRPC } from "@ximingwang/toolkit";
 import {
   Alert,
   BannedAddr,
@@ -25,8 +25,8 @@ import {
   TxPoolIds,
   TxPoolInfo,
   TxPoolVerbosity,
-} from "@sighwang/base";
-import { BI } from "@sighwang/bi";
+} from "@ximingwang/base";
+import { BI } from "@ximingwang/bi";
 
 export type SerializedBlock = HexString;
 export type SerializedHeader = HexString;

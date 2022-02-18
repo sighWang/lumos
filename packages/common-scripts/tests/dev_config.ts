@@ -1,4 +1,4 @@
-import { Config } from "@sighwang/config-manager";
+import { Config } from "@ximingwang/config-manager";
 
 export const DEV_CONFIG: Config = {
   PREFIX: "ckt",

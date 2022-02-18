@@ -5,7 +5,7 @@ import {
   generateSecp256k1Blake160MultisigAddress,
   scriptToAddress,
 } from "../src";
-import { predefined } from "@sighwang/config-manager";
+import { predefined } from "@ximingwang/config-manager";
 const { LINA, AGGRON4 } = predefined;
 import {
   shortAddressInfo,

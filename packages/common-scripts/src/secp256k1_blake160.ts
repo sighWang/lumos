@@ -1,6 +1,9 @@
 import { Set } from "immutable";
-import { normalizers, Reader } from "@sighwang/toolkit";
-import { parseAddress, minimalCellCapacityCompatible } from "@sighwang/helpers";
+import { normalizers, Reader } from "@ximingwang/toolkit";
+import {
+  parseAddress,
+  minimalCellCapacityCompatible,
+} from "@ximingwang/helpers";
 import {
   core,
   values,
@@ -14,9 +17,9 @@ import {
   OutPoint,
   HexString,
   PackedSince,
-} from "@sighwang/base";
-import { getConfig, Config } from "@sighwang/config-manager";
-import { TransactionSkeletonType, Options } from "@sighwang/helpers";
+} from "@ximingwang/base";
+import { getConfig, Config } from "@ximingwang/config-manager";
+import { TransactionSkeletonType, Options } from "@ximingwang/helpers";
 import {
   addCellDep,
   ensureScript,
@@ -26,7 +29,7 @@ import {
 } from "./helper";
 import { FromInfo } from ".";
 import { parseFromInfo } from "./from_info";
-import { BI, BIish } from "@sighwang/bi";
+import { BI, BIish } from "@ximingwang/bi";
 const { ScriptValue } = values;
 
 export class CellCollector implements CellCollectorType {

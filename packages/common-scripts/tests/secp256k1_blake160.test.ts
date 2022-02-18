@@ -4,15 +4,15 @@ import {
   parseAddress,
   TransactionSkeleton,
   TransactionSkeletonType,
-} from "@sighwang/helpers";
+} from "@ximingwang/helpers";
 import { secp256k1Blake160 } from "../src";
-import { predefined } from "@sighwang/config-manager";
+import { predefined } from "@ximingwang/config-manager";
 const { LINA, AGGRON4 } = predefined;
 import { bob, alice, fullAddressInfo } from "./account_info";
 import { inputs } from "./secp256k1_blake160_inputs";
-import { Cell, values } from "@sighwang/base";
+import { Cell, values } from "@ximingwang/base";
 import { bobSecpInputs } from "./inputs";
-import { BI } from "@sighwang/bi";
+import { BI } from "@ximingwang/bi";
 
 const cellProvider = new CellProvider(inputs());
 let txSkeleton: TransactionSkeletonType = TransactionSkeleton({ cellProvider });

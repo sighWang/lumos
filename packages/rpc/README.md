@@ -1,11 +1,11 @@
-# `@sighwang/rpc`
+# `@ximingwang/rpc`
 
 RPC module for lumos. Provide type definitions for CKB RPC interface.
 
 ## Usage
 
 ```javascript
-import { RPC } from "@sighwang/rpc";
+import { RPC } from "@ximingwang/rpc";
 const rpc = new RPC("http://localhost:8114");
 await rpc.get_tip_header();
 

@@ -3,7 +3,7 @@ import {
   TransactionSkeletonType,
   Options,
   minimalCellCapacityCompatible,
-} from "@sighwang/helpers";
+} from "@ximingwang/helpers";
 import {
   core,
   values,
@@ -17,10 +17,10 @@ import {
   CellProvider,
   QueryOptions,
   PackedSince,
-} from "@sighwang/base";
-import { getConfig, Config } from "@sighwang/config-manager";
+} from "@ximingwang/base";
+import { getConfig, Config } from "@ximingwang/config-manager";
 const { ScriptValue } = values;
-import { normalizers, Reader } from "@sighwang/toolkit";
+import { normalizers, Reader } from "@ximingwang/toolkit";
 import { Set } from "immutable";
 import {
   addCellDep,
@@ -36,7 +36,7 @@ import {
   serializeMultisigScript,
   multisigArgs,
 } from "./from_info";
-import { BI, BIish } from "@sighwang/bi";
+import { BI, BIish } from "@ximingwang/bi";
 
 export { serializeMultisigScript, multisigArgs };
 

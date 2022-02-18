@@ -1,5 +1,5 @@
-const { BI } = require("@sighwang/bi");
-const { Reader } = require("@sighwang/toolkit");
+const { BI } = require("@ximingwang/bi");
+const { Reader } = require("@ximingwang/toolkit");
 
 function DenormalizeOutPoint(outPoint) {
   return {

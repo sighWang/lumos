@@ -1,13 +1,13 @@
-import { Cell, Script } from "@sighwang/base";
-import { common } from "@sighwang/common-scripts";
+import { Cell, Script } from "@ximingwang/base";
+import { common } from "@ximingwang/common-scripts";
 import test from "ava";
 import { CellProvider } from "./cell_provider";
 import deploy from "../src/deploy";
 const { __tests__ } = deploy;
 const { calculateTxFee } = __tests__;
-import { predefined } from "@sighwang/config-manager";
-import { TransactionSkeletonType } from "@sighwang/helpers";
-import { BI } from "@sighwang/bi";
+import { predefined } from "@ximingwang/config-manager";
+import { TransactionSkeletonType } from "@ximingwang/helpers";
+import { BI } from "@ximingwang/bi";
 const { AGGRON4 } = predefined;
 
 const FROMADDRESS = "ckt1qyqptxys5l9vk39ft0hswscxgseawc77y2wqlr558h";

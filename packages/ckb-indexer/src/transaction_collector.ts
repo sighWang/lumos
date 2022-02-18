@@ -4,7 +4,7 @@ import {
   Output,
   OutPoint,
   TransactionWithStatus,
-} from "@sighwang/base";
+} from "@ximingwang/base";
 import {
   SearchKeyFilter,
   CKBIndexerQueryOptions,

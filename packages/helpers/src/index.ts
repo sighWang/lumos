@@ -10,12 +10,12 @@ import {
   PackedSince,
   Transaction,
   WitnessArgs,
-} from "@sighwang/base";
+} from "@ximingwang/base";
 import * as bech32 from "bech32";
-import { normalizers, validators, Reader } from "@sighwang/toolkit";
+import { normalizers, validators, Reader } from "@ximingwang/toolkit";
 import { List, Record, Map as ImmutableMap } from "immutable";
-import { getConfig, Config } from "@sighwang/config-manager";
-import { BI } from "@sighwang/bi";
+import { getConfig, Config } from "@ximingwang/config-manager";
+import { BI } from "@ximingwang/bi";
 
 export interface Options {
   config?: Config;

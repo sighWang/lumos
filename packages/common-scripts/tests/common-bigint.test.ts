@@ -6,10 +6,10 @@ import { CellProvider } from "./cell_provider";
 import {
   TransactionSkeleton,
   TransactionSkeletonType,
-} from "@sighwang/helpers";
-import { Cell } from "@sighwang/base";
+} from "@ximingwang/helpers";
+import { Cell } from "@ximingwang/base";
 import { FromInfo } from "../src";
-import { predefined } from "@sighwang/config-manager";
+import { predefined } from "@ximingwang/config-manager";
 const { AGGRON4 } = predefined;
 
 const aliceInput: Cell = {

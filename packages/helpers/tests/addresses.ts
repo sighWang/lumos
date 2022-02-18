@@ -1,4 +1,4 @@
-import { Address, Script } from "@sighwang/base";
+import { Address, Script } from "@ximingwang/base";
 
 interface AddressInfo {
   testnetAddress: Address;

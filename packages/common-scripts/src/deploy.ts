@@ -8,9 +8,9 @@ import {
   core,
   WitnessArgs,
   Transaction,
-} from "@sighwang/base";
-import { SerializeTransaction } from "@sighwang/base/lib/core";
-import { getConfig, Config, helpers } from "@sighwang/config-manager";
+} from "@ximingwang/base";
+import { SerializeTransaction } from "@ximingwang/base/lib/core";
+import { getConfig, Config, helpers } from "@ximingwang/config-manager";
 import {
   TransactionSkeletonType,
   TransactionSkeleton,
@@ -18,12 +18,12 @@ import {
   createTransactionFromSkeleton,
   parseAddress,
   minimalCellCapacityCompatible,
-} from "@sighwang/helpers";
-import { Reader, normalizers } from "@sighwang/toolkit";
-import { RPC } from "@sighwang/rpc";
+} from "@ximingwang/helpers";
+import { Reader, normalizers } from "@ximingwang/toolkit";
+import { RPC } from "@ximingwang/rpc";
 import { Set } from "immutable";
 import { FromInfo, parseFromInfo, MultisigScript } from "./from_info";
-import { BI, BIish } from "@sighwang/bi";
+import { BI, BIish } from "@ximingwang/bi";
 const { ScriptValue } = values;
 
 function bytesToHex(bytes: Uint8Array): string {

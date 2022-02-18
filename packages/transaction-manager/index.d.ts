@@ -5,7 +5,7 @@ import {
   logger,
   Indexer,
   CellCollector,
-} from "@sighwang/base";
+} from "@ximingwang/base";
 
 declare class TransactionManager {
   constructor(

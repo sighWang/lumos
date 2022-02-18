@@ -3,7 +3,7 @@ import {
   createTransactionFromSkeleton,
   parseAddress,
   TransactionSkeletonType,
-} from "@sighwang/helpers";
+} from "@ximingwang/helpers";
 import {
   core,
   values,
@@ -12,11 +12,11 @@ import {
   Script,
   Address,
   HexString,
-} from "@sighwang/base";
+} from "@ximingwang/base";
 const { CKBHasher, ckbHash } = utils;
-import { normalizers, Reader } from "@sighwang/toolkit";
-import { Config } from "@sighwang/config-manager";
-import { BI } from "@sighwang/bi";
+import { normalizers, Reader } from "@ximingwang/toolkit";
+import { Config } from "@ximingwang/config-manager";
+import { BI } from "@ximingwang/bi";
 
 export function addCellDep(
   txSkeleton: TransactionSkeletonType,

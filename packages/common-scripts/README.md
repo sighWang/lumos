@@ -1,4 +1,4 @@
-# `@sighwang/common-scripts`
+# `@ximingwang/common-scripts`
 
 Common script implementation for lumos. Includes `secp256k1_blake2b` lock script, `secp256k1_blake160_multisig` lock script, `dao` type script, `sudt` type script now.
 
@@ -17,9 +17,9 @@ Common script implementation for lumos. Includes `secp256k1_blake2b` lock script
 Following script will show how to use `common` script to transfer capacity to another address. `secp256k1_blake160`, `secp256k1_blake160_multisig` and `locktime_pool` script are similar to `common`, and `common` maybe a better choose.
 
 ```javascript
-const { common } = require("@sighwang/common-scripts");
-const { sealTransaction } = require("@sighwang/helpers");
-const { Indexer } = require("@sighwang/ckb-indexer");
+const { common } = require("@ximingwang/common-scripts");
+const { sealTransaction } = require("@ximingwang/helpers");
+const { Indexer } = require("@ximingwang/ckb-indexer");
 
 // We can use Indexer module as cell provider
 const indexer = new Indexer("http://127.0.0.1:8114");
@@ -97,7 +97,7 @@ const tx = sealTransaction(txSkeleton, contents);
 Following script will show how to use `DAO` script.
 
 ```javascript
-const { dao } = require("@sighwang/common-scripts");
+const { dao } = require("@ximingwang/common-scripts");
 
 let txSkeleton = TransactionSkeleton({ cellProvider: indexer });
 
@@ -137,7 +137,7 @@ txSkeleton = await dao.withdraw(txSkeleton, daoDepositedCells[0]);
 Following script will show how to use `sUDT` script.
 
 ```javascript
-const { sudt } = require("@sighwang/common-scripts");
+const { sudt } = require("@ximingwang/common-scripts");
 let txSkeleton = TransactionSkeleton({ cellProvider: indexer });
 
 // issue an sudt token, will use the second param address to generate sudt token(it's lock hash).
@@ -168,10 +168,10 @@ const {
   generateDeployWithTypeIdTx,
   generateUpgradeTypeIdDataTx,
   payFee,
-} = require("@sighwang/common-scripts");
-const { Indexer } = require("@sighwang/ckb-indexer");
-const { initializeConfig, predefined } = require("@sighwang/config-manager");
-const { parseAddress } = require("@sighwang/helpers");
+} = require("@ximingwang/common-scripts");
+const { Indexer } = require("@ximingwang/ckb-indexer");
+const { initializeConfig, predefined } = require("@ximingwang/config-manager");
+const { parseAddress } = require("@ximingwang/helpers");
 
 initializeConfig(predefined.AGGRON4);
 

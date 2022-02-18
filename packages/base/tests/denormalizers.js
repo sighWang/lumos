@@ -1,5 +1,5 @@
 const test = require("ava");
-const { normalizers } = require("@sighwang/toolkit");
+const { normalizers } = require("@ximingwang/toolkit");
 
 const core = require("../lib/core");
 const denormalizers = require("../lib/denormalizers");

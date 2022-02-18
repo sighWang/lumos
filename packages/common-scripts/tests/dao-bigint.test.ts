@@ -1,6 +1,6 @@
 import test from "ava";
 import { dao } from "../src";
-import { Cell } from "@sighwang/base";
+import { Cell } from "@ximingwang/base";
 
 const calculateMaximumWithdrawInfo = {
   depositInput: {

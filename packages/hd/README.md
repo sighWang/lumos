@@ -1,4 +1,4 @@
-# `@sighwang/hd`
+# `@ximingwang/hd`
 
 HD & Mnemonic implementation for lumos.
 
@@ -7,7 +7,7 @@ HD & Mnemonic implementation for lumos.
 Create a new HD wallet.
 
 ```javascript
-const { mnemonic, ExtendedPrivateKey, Keystore } = require("@sighwang/hd");
+const { mnemonic, ExtendedPrivateKey, Keystore } = require("@ximingwang/hd");
 const m = mnemonic.generateMnemonic();
 const seed = mnemonic.mnemonicToSeedSync(m);
 const extendedPrivateKey = ExtendedPrivateKey.fromSeed(seed);
@@ -22,7 +22,7 @@ const keystore = Keystore.load("you file path, with file name");
 XPub support.
 
 ```javascript
-const { XPubStore } = require("@sighwang/hd");
+const { XPubStore } = require("@ximingwang/hd");
 
 // load from xpub file.
 const xpub = XPubStore.load("you path");

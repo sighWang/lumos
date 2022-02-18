@@ -1,6 +1,6 @@
 import Keychain from "./keychain";
 import key, { privateToPublic } from "./key";
-import { utils, HexString } from "@sighwang/base";
+import { utils, HexString } from "@ximingwang/base";
 import { assertPublicKey, assertChainCode, assertPrivateKey } from "./helper";
 
 export enum AddressType {

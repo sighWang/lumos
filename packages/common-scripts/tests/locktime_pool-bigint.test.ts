@@ -3,15 +3,15 @@ import {
   TransactionSkeleton,
   TransactionSkeletonType,
   Options,
-} from "@sighwang/helpers";
+} from "@ximingwang/helpers";
 import { locktimePool, LocktimeCell, FromInfo } from "../src";
 const { transfer, prepareSigningEntries, payFee } = locktimePool;
 import { CellProvider } from "./cell_provider";
 import { calculateMaximumWithdraw } from "../src/dao";
 import { List } from "immutable";
 import { DEV_CONFIG } from "./dev_config";
-import { Config, predefined } from "@sighwang/config-manager";
-import { Header, Cell, CellCollector } from "@sighwang/base";
+import { Config, predefined } from "@ximingwang/config-manager";
+import { Header, Cell, CellCollector } from "@ximingwang/base";
 import { parseFromInfo } from "../src/from_info";
 import {
   bobSecpDaoDepositInput,
@@ -19,8 +19,8 @@ import {
   tipHeader as inputTipHeader,
 } from "./inputs";
 import { bob } from "./account_info";
-import { since as SinceUtils } from "@sighwang/base";
-import { BI } from "@sighwang/bi";
+import { since as SinceUtils } from "@ximingwang/base";
+import { BI } from "@ximingwang/bi";
 const { AGGRON4 } = predefined;
 
 const originCapacity = "0x174876e800";

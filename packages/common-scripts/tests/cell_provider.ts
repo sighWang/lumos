@@ -1,4 +1,4 @@
-import { Cell, Script, helpers } from "@sighwang/base";
+import { Cell, Script, helpers } from "@ximingwang/base";
 const { isCellMatchQueryOptions } = helpers;
 
 interface Options {

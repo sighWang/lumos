@@ -1,4 +1,4 @@
-import { HexString, utils } from "@sighwang/base";
+import { HexString, utils } from "@ximingwang/base";
 import { ec as EC, SignatureInput } from "elliptic";
 import { assertPrivateKey, assertPublicKey } from "./helper";
 

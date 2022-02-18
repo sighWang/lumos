@@ -1,4 +1,4 @@
-const { BI, isBIish } = require("@sighwang/bi");
+const { BI, isBIish } = require("@ximingwang/bi");
 function parseSince(since) {
   const result = parseSinceCompatible(since);
 

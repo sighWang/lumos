@@ -3,7 +3,7 @@ import {
   Options,
   TransactionSkeletonType,
   minimalCellCapacityCompatible,
-} from "@sighwang/helpers";
+} from "@ximingwang/helpers";
 import { FromInfo, parseFromInfo } from "./from_info";
 import secp256k1Blake160 from "./secp256k1_blake160";
 import {
@@ -26,10 +26,10 @@ import {
   QueryOptions,
   CellCollector as CellCollectorType,
   SinceValidationInfo,
-} from "@sighwang/base";
+} from "@ximingwang/base";
 const { toBigUInt64LE, readBigUInt64LECompatible, readBigUInt64LE } = utils;
 const { ScriptValue } = values;
-import { normalizers, Reader } from "@sighwang/toolkit";
+import { normalizers, Reader } from "@ximingwang/toolkit";
 import {
   generateDaoScript,
   isSecp256k1Blake160MultisigScript,
@@ -45,11 +45,11 @@ const {
   validateSince,
 } = sinceUtils;
 import { List, Set } from "immutable";
-import { getConfig, Config } from "@sighwang/config-manager";
-import { RPC } from "@sighwang/rpc";
+import { getConfig, Config } from "@ximingwang/config-manager";
+import { RPC } from "@ximingwang/rpc";
 import { secp256k1Blake160Multisig } from ".";
-import { parseSinceCompatible } from "@sighwang/base/lib/since";
-import { BI, BIish } from "@sighwang/bi";
+import { parseSinceCompatible } from "@ximingwang/base/lib/since";
+import { BI, BIish } from "@ximingwang/bi";
 
 export interface LocktimeCell extends Cell {
   since: PackedSince;

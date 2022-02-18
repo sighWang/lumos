@@ -4,14 +4,14 @@ import {
   parseAddress,
   TransactionSkeleton,
   TransactionSkeletonType,
-} from "@sighwang/helpers";
+} from "@ximingwang/helpers";
 import { secp256k1Blake160Multisig } from "../src";
-import { predefined } from "@sighwang/config-manager";
+import { predefined } from "@ximingwang/config-manager";
 const { AGGRON4 } = predefined;
-import { Cell, values } from "@sighwang/base";
+import { Cell, values } from "@ximingwang/base";
 import { bobMultisigInputs } from "./inputs";
 import { bob, alice } from "./account_info";
-import { BI } from "@sighwang/bi";
+import { BI } from "@ximingwang/bi";
 
 const cellProvider = new CellProvider(bobMultisigInputs);
 let txSkeleton: TransactionSkeletonType = TransactionSkeleton({ cellProvider });
