@@ -1,5 +1,5 @@
 const test = require("ava");
-const { BI } = require("@sighwang/bi");
+const { BI } = require("@ximingwang/bi");
 
 const { since, utils } = require("../lib");
 

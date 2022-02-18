@@ -1,7 +1,7 @@
-const { validators, RPC } = require("@sighwang/toolkit");
+const { validators, RPC } = require("@ximingwang/toolkit");
 const { List, Set } = require("immutable");
-const { values, helpers } = require("@sighwang/base");
-const { TransactionCollector } = require("@sighwang/ckb-indexer");
+const { values, helpers } = require("@ximingwang/base");
+const { TransactionCollector } = require("@ximingwang/ckb-indexer");
 const { isCellMatchQueryOptions } = helpers;
 
 function defaultLogger(level, message) {

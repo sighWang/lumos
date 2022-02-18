@@ -1,4 +1,4 @@
-import { LocalNode } from "@sighwang/base";
+import { LocalNode } from "@ximingwang/base";
 
 export function localNode(info?: Partial<LocalNode>): LocalNode {
   return Object.assign(

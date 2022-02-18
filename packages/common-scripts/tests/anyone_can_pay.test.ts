@@ -5,14 +5,14 @@ import {
   TransactionSkeletonType,
   TransactionSkeleton,
   minimalCellCapacityCompatible,
-} from "@sighwang/helpers";
-import { predefined } from "@sighwang/config-manager";
+} from "@ximingwang/helpers";
+import { predefined } from "@ximingwang/config-manager";
 import { bob, alice } from "./account_info";
 import { bobAcpCells, aliceAcpCells } from "./inputs";
-import { Cell, values } from "@sighwang/base";
+import { Cell, values } from "@ximingwang/base";
 const { AGGRON4 } = predefined;
 import { checkLimit } from "../src/anyone_can_pay";
-import { BI } from "@sighwang/bi";
+import { BI } from "@ximingwang/bi";
 test.before(() => {
   // @ts-ignore: Unreachable code error
   BigInt = () => {

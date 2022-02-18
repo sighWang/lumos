@@ -12,8 +12,8 @@ import {
   utils,
   values,
   WitnessArgs,
-} from "@sighwang/base";
-import { Config, getConfig } from "@sighwang/config-manager";
+} from "@ximingwang/base";
+import { Config, getConfig } from "@ximingwang/config-manager";
 import {
   createTransactionFromSkeleton,
   generateAddress,
@@ -21,10 +21,10 @@ import {
   Options,
   parseAddress,
   TransactionSkeletonType,
-} from "@sighwang/helpers";
-import { normalizers, Reader } from "@sighwang/toolkit";
+} from "@ximingwang/helpers";
+import { normalizers, Reader } from "@ximingwang/toolkit";
 import { List, Set } from "immutable";
-import { BI, BIish } from "@sighwang/bi";
+import { BI, BIish } from "@ximingwang/bi";
 import { FromInfo, parseFromInfo } from "./from_info";
 import {
   addCellDep,

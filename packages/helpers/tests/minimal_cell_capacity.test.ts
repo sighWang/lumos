@@ -1,7 +1,7 @@
 import test from "ava";
-import { Cell } from "@sighwang/base";
+import { Cell } from "@ximingwang/base";
 import { minimalCellCapacity, minimalCellCapacityCompatible } from "../src";
-import { BI } from "@sighwang/bi";
+import { BI } from "@ximingwang/bi";
 
 const normalCell: Cell = {
   cell_output: {

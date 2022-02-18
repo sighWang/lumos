@@ -1,11 +1,11 @@
-# @sighwang/bi
+# @ximingwang/bi
 
 A big number library for lumos.
 
 ## Example
 
 ```ts
-import { BI } from "@sighwang/bi";
+import { BI } from "@ximingwang/bi";
 
 BI.from(1).add(1);
 ```

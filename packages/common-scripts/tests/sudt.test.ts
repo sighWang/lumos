@@ -5,10 +5,10 @@ import {
   TransactionSkeletonType,
   TransactionSkeleton,
   parseAddress,
-} from "@sighwang/helpers";
+} from "@ximingwang/helpers";
 import { bob, alice } from "./account_info";
-import { predefined } from "@sighwang/config-manager";
-import { Script, utils } from "@sighwang/base";
+import { predefined } from "@ximingwang/config-manager";
+import { Script, utils } from "@ximingwang/base";
 import { isSudtScript } from "../src/helper";
 import {
   bobSecpInputs,
@@ -18,8 +18,8 @@ import {
   bobAcpSudtInputs,
   aliceAcpSudtInputs,
 } from "./inputs";
-import { readBigUInt128LECompatible } from "@sighwang/base/lib/utils";
-import { BI } from "@sighwang/bi";
+import { readBigUInt128LECompatible } from "@ximingwang/base/lib/utils";
+import { BI } from "@ximingwang/bi";
 const { AGGRON4 } = predefined;
 
 test.before(() => {

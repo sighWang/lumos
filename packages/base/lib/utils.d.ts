@@ -1,6 +1,6 @@
-import { Reader } from "@sighwang/toolkit";
+import { Reader } from "@ximingwang/toolkit";
 import { HexNumber } from "..";
-import { BI, BIish } from "@sighwang/bi";
+import { BI, BIish } from "@ximingwang/bi";
 import { Script, Input } from "./api";
 import { Hash, HexString } from "./primitive";
 

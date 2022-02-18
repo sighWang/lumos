@@ -6,7 +6,7 @@ const {
   cellCollectorTestCases,
   queryWithBlockHash,
 } = require("./test_cases.js");
-import { HashType } from "@sighwang/base";
+import { HashType } from "@ximingwang/base";
 import { OtherQueryOptions } from "../src/type";
 
 const nodeUri = "http://127.0.0.1:8118/rpc";

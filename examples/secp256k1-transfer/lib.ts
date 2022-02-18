@@ -11,8 +11,8 @@ import {
   core,
   WitnessArgs,
   toolkit,
-} from "@ckb-lumos/lumos";
-import { values } from "@ckb-lumos/base";
+} from "@ximingwang/lumos";
+import { values } from "@ximingwang/base";
 const { ScriptValue } = values;
 
 export const { AGGRON4 } = config.predefined;
@@ -102,12 +102,8 @@ export async function transfer(options: Options): Promise<string> {
     data: "0x",
   };
 
-  txSkeleton = txSkeleton.update("inputs", (inputs) =>
-    inputs.push(...collected)
-  );
-  txSkeleton = txSkeleton.update("outputs", (outputs) =>
-    outputs.push(transferOutput, changeOutput)
-  );
+  txSkeleton = txSkeleton.update("inputs", (inputs) => inputs.push(...collected));
+  txSkeleton = txSkeleton.update("outputs", (outputs) => outputs.push(transferOutput, changeOutput));
   txSkeleton = txSkeleton.update("cellDeps", (cellDeps) =>
     cellDeps.push({
       out_point: {
@@ -127,9 +123,7 @@ export async function transfer(options: Options): Promise<string> {
     );
   if (firstIndex !== -1) {
     while (firstIndex >= txSkeleton.get("witnesses").size) {
-      txSkeleton = txSkeleton.update("witnesses", (witnesses) =>
-        witnesses.push("0x")
-      );
+      txSkeleton = txSkeleton.update("witnesses", (witnesses) => witnesses.push("0x"));
     }
     let witness: string = txSkeleton.get("witnesses").get(firstIndex)!;
     const newWitnessArgs: WitnessArgs = {
@@ -140,36 +134,22 @@ export async function transfer(options: Options): Promise<string> {
     if (witness !== "0x") {
       const witnessArgs = new core.WitnessArgs(new toolkit.Reader(witness));
       const lock = witnessArgs.getLock();
-      if (
-        lock.hasValue() &&
-        new toolkit.Reader(lock.value().raw()).serializeJson() !==
-          newWitnessArgs.lock
-      ) {
-        throw new Error(
-          "Lock field in first witness is set aside for signature!"
-        );
+      if (lock.hasValue() && new toolkit.Reader(lock.value().raw()).serializeJson() !== newWitnessArgs.lock) {
+        throw new Error("Lock field in first witness is set aside for signature!");
       }
       const inputType = witnessArgs.getInputType();
       if (inputType.hasValue()) {
-        newWitnessArgs.input_type = new toolkit.Reader(
-          inputType.value().raw()
-        ).serializeJson();
+        newWitnessArgs.input_type = new toolkit.Reader(inputType.value().raw()).serializeJson();
       }
       const outputType = witnessArgs.getOutputType();
       if (outputType.hasValue()) {
-        newWitnessArgs.output_type = new toolkit.Reader(
-          outputType.value().raw()
-        ).serializeJson();
+        newWitnessArgs.output_type = new toolkit.Reader(outputType.value().raw()).serializeJson();
       }
     }
     witness = new toolkit.Reader(
-      core.SerializeWitnessArgs(
-        toolkit.normalizers.NormalizeWitnessArgs(newWitnessArgs)
-      )
+      core.SerializeWitnessArgs(toolkit.normalizers.NormalizeWitnessArgs(newWitnessArgs))
     ).serializeJson();
-    txSkeleton = txSkeleton.update("witnesses", (witnesses) =>
-      witnesses.set(firstIndex, witness)
-    );
+    txSkeleton = txSkeleton.update("witnesses", (witnesses) => witnesses.set(firstIndex, witness));
   }
 
   txSkeleton = commons.common.prepareSigningEntries(txSkeleton);

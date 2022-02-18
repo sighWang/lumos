@@ -1,4 +1,4 @@
-# `@sighwang/base`
+# `@ximingwang/base`
 
 Test toolkit for testing CKB dApps
 

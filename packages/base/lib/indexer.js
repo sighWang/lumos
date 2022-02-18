@@ -1,4 +1,4 @@
-const { validators } = require("@sighwang/toolkit");
+const { validators } = require("@ximingwang/toolkit");
 const utils = require("./utils");
 
 // Notice this TransactionCollector implementation only uses indexer

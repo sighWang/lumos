@@ -1,4 +1,4 @@
-import { utils, Script, ScriptWrapper, HexString } from "@sighwang/base";
+import { utils, Script, ScriptWrapper, HexString } from "@ximingwang/base";
 import {
   CKBIndexerQueryOptions,
   HexadecimalRange,
@@ -7,7 +7,7 @@ import {
   SearchKey,
 } from "./type";
 import fetch from "cross-fetch";
-import { BI } from "@sighwang/bi";
+import { BI } from "@ximingwang/bi";
 
 function instanceOfScriptWrapper(object: unknown): object is ScriptWrapper {
   return typeof object === "object" && object != null && "script" in object;

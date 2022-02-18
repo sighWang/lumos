@@ -1,5 +1,5 @@
 import deepFreeze from "deep-freeze-strict";
-import { logger } from "@sighwang/base";
+import { logger } from "@ximingwang/base";
 import { Config } from "./types";
 import { predefined } from "./predefined";
 

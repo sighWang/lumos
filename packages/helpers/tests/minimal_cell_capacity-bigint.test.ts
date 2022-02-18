@@ -1,5 +1,5 @@
 import test from "ava";
-import { Cell } from "@sighwang/base";
+import { Cell } from "@ximingwang/base";
 import { minimalCellCapacity } from "../src";
 
 const normalCell: Cell = {

@@ -10,11 +10,11 @@ import {
   helpers,
   utils,
   Indexer,
-} from "@sighwang/base";
-import { TransactionCollector as TxCollector } from "@sighwang/ckb-indexer";
+} from "@ximingwang/base";
+import { TransactionCollector as TxCollector } from "@ximingwang/ckb-indexer";
 import { Map, Set } from "immutable";
-import { Config, getConfig } from "@sighwang/config-manager";
-import { RPC } from "@sighwang/rpc";
+import { Config, getConfig } from "@ximingwang/config-manager";
+import { RPC } from "@ximingwang/rpc";
 import {
   AccountExtendedPublicKey,
   AddressType,
@@ -22,9 +22,9 @@ import {
   key,
   Keystore,
   mnemonic,
-} from "@sighwang/hd";
-import { assertPublicKey, assertChainCode } from "@sighwang/hd/lib/helper";
-import { BI } from "@sighwang/bi";
+} from "@ximingwang/hd";
+import { assertPublicKey, assertChainCode } from "@ximingwang/hd/lib/helper";
+import { BI } from "@ximingwang/bi";
 const { isCellMatchQueryOptions } = helpers;
 const { publicKeyToBlake160 } = key;
 const { mnemonicToSeedSync } = mnemonic;

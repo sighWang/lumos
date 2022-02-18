@@ -1,8 +1,8 @@
-# `@sighwang/helpers`
+# `@ximingwang/helpers`
 
 Helper utilities for working with CKB transactions from lumos.
 
-The difference between this and `@sighwang/base`, is that `@sighwang/base` contains only core definitions, while this module contains utilities used in a framework sense. One example is: you can pretty much use `@sighwang/base` as a standalone library, while this library integrates more with `config` module so it knows whether the framework is running under testnet, or mainnet environment.
+The difference between this and `@ximingwang/base`, is that `@ximingwang/base` contains only core definitions, while this module contains utilities used in a framework sense. One example is: you can pretty much use `@ximingwang/base` as a standalone library, while this library integrates more with `config` module so it knows whether the framework is running under testnet, or mainnet environment.
 
 ## Usage
 
@@ -11,7 +11,7 @@ const {
   minimalCellCapacity,
   generateAddress,
   parseAddress,
-} = require("@sighwang/helpers");
+} = require("@ximingwang/helpers");
 
 // Get cell minimal capacity.
 const result = minimalCellCapacity({
@@ -42,7 +42,7 @@ const address = generateAddress({
 });
 
 // Then you will get mainnet address "ckb1qyqrdsefa43s6m882pcj53m4gdnj4k440axqdt9rtd", or you can generate testnet address by
-const { predefined } = require("@sighwang/config-manager");
+const { predefined } = require("@ximingwang/config-manager");
 
 const address = generateAddress(
   {

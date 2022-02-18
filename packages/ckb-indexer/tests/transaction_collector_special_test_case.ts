@@ -1,4 +1,4 @@
-import { HashType } from "@sighwang/base";
+import { HashType } from "@ximingwang/base";
 import { IOType } from "../src/type";
 
 export const queryOption = {

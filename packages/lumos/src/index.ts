@@ -3,7 +3,7 @@ import {
   validators,
   normalizers,
   transformers,
-} from "@sighwang/toolkit";
+} from "@ximingwang/toolkit";
 
 export const toolkit = { Reader, validators, normalizers, transformers };
 
@@ -21,7 +21,7 @@ export type {
   Input,
   Output,
   Script,
-} from "@sighwang/base/lib/api";
+} from "@ximingwang/base/lib/api";
 
 export type {
   Address,
@@ -32,14 +32,14 @@ export type {
   HexadecimalRange,
   PackedDao,
   PackedSince,
-} from "@sighwang/base/lib/primitive";
+} from "@ximingwang/base/lib/primitive";
 
-export { core, since, utils } from "@sighwang/base";
-export * as config from "@sighwang/config-manager";
+export { core, since, utils } from "@ximingwang/base";
+export * as config from "@ximingwang/config-manager";
 
-export { RPC } from "@sighwang/rpc";
-export * as hd from "@sighwang/hd";
-export { Indexer, CellCollector } from "@sighwang/ckb-indexer";
-export * as helpers from "@sighwang/helpers";
-export * as commons from "@sighwang/common-scripts";
-export { BI } from "@sighwang/bi";
+export { RPC } from "@ximingwang/rpc";
+export * as hd from "@ximingwang/hd";
+export { Indexer, CellCollector } from "@ximingwang/ckb-indexer";
+export * as helpers from "@ximingwang/helpers";
+export * as commons from "@ximingwang/common-scripts";
+export { BI } from "@ximingwang/bi";

@@ -1,4 +1,4 @@
-import { Script } from "@sighwang/base";
+import { Script } from "@ximingwang/base";
 import { ScriptConfig, ScriptConfigs } from "./types";
 import { getConfig } from "./manager";
 
