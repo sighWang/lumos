@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0-rc8.8](https://github.com/ximingwang/lumos/compare/v0.17.0-rc8.7...v0.17.0-rc8.8) (2022-02-18)
+
+
+### Features
+
+* **common-scripts:** added P2PKH general function ([#254](https://github.com/ximingwang/lumos/issues/254)) ([279f793](https://github.com/ximingwang/lumos/commit/279f7937f4da6cae7473b30c6b3f929b90e164e5))
+
+
+
+
+
 # [0.17.0-rc8.7](https://github.com/ximingwang/lumos/compare/v0.17.0-rc8...v0.17.0-rc8.7) (2022-02-11)
 
 **Note:** Version bump only for package @ximingwang/common-scripts

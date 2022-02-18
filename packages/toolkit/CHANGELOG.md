@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0-rc8.8](https://github.com/ximingwang/lumos/compare/v0.17.0-rc8.7...v0.17.0-rc8.8) (2022-02-18)
+
+**Note:** Version bump only for package @ximingwang/toolkit
+
+
+
+
+
 # [0.17.0-rc8.7](https://github.com/ximingwang/lumos/compare/v0.17.0-rc8...v0.17.0-rc8.7) (2022-02-11)
 
 **Note:** Version bump only for package @ximingwang/toolkit
