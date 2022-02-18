@@ -33,6 +33,8 @@
     "rollup": "^1.32.0"
   },
   "bugs": {
+    "url": "https://github.com/ximingwang/lumos/issues"
+  },
   "dependencies": {
     "@ximingwang/bi": "^0.17.0-rc8",
     "@ximingwang/toolkit": "^0.17.0-rc8",
