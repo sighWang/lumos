@@ -38,7 +38,7 @@
     "build:js": "babel --root-mode upward src --out-dir lib --extensions .ts -s",
     "clean": "rm -rf lib",
     "prepublishOnly": "yarn run clean && yarn run build",
-    "release": "npm publish"
+    "release": "npm publish --access public"
   },
   "bugs": {
     "url": "https://github.com/ximingwang/lumos/issues"
@@ -51,5 +51,5 @@
       "ts-node/register"
     ]
   },
-  "gitHead": "54457b253c46c52e5d36b8f2f7d2fc62cd7167e5"
+  "gitHead": "67ca7c2cea4108caf9d16ea54f13d1fc20b41280"
 }
