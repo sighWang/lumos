@@ -4,7 +4,6 @@ on:
   pull_request:
     branches:
       - develop
-      - ckb2021
     types: [closed]
 
 permissions:
@@ -15,15 +14,15 @@ permissions:
 jobs:
   publish:
     name: Publish
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node ${{ matrix.node_version }}
         uses: actions/setup-node@v2
         with:
-          node-version: 14
-          registry-url: "https://npm.pkg.github.com"
+          node-version: 16
+          registry-url: "https://registry.npmjs.org"
       - name: Git Identity
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -81,14 +80,4 @@ jobs:
           yarn lerna publish from-package --yes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/github-script@v4
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: 'https://github.com/${{ github.repository }}/releases/tag/v${{ env.CURRENT_VERSION }} is released 🎉'
-            })
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,9 +1,9 @@
 {
-  "name": "@sighwang/testkit",
-  "version": "0.17.0-rc8.7",
+  "name": "@ximingwang/testkit",
+  "version": "0.17.0-rc8",
   "private": true,
   "description": "Test toolkit for CKB",
-  "homepage": "https://github.com/sighwang/lumos#readme",
+  "homepage": "https://github.com/ximingwang/lumos#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -23,8 +23,8 @@
     "lib"
   ],
   "dependencies": {
-    "@sighwang/base": "^0.17.0-rc8.7",
-    "@sighwang/toolkit": "^0.17.0-rc8.7",
+    "@ximingwang/base": "^0.17.0-rc8",
+    "@ximingwang/toolkit": "^0.17.0-rc8",
     "@types/body-parser": "^1.19.1",
     "@types/express": "^4.17.13",
     "body-parser": "^1.19.0",
@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sighwang/lumos.git"
+    "url": "git+https://github.com/ximingwang/lumos.git"
   },
   "scripts": {
     "start": "ts-node example/mock-ckb-node.ts",
@@ -45,7 +45,7 @@
     "release": "npm publish"
   },
   "bugs": {
-    "url": "https://github.com/sighwang/lumos/issues"
+    "url": "https://github.com/ximingwang/lumos/issues"
   },
   "ava": {
     "extensions": [

@@ -1,9 +1,9 @@
 {
-  "name": "@sighwang/transaction-manager",
-  "version": "0.17.0-rc8.7",
+  "name": "@ximingwang/transaction-manager",
+  "version": "0.17.0-rc8",
   "description": "Pending Transaction Manager for lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
-  "homepage": "https://github.com/sighwang/lumos#readme",
+  "homepage": "https://github.com/ximingwang/lumos#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "index.d.ts",
@@ -25,7 +25,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sighwang/lumos.git"
+    "url": "git+https://github.com/ximingwang/lumos.git"
   },
   "scripts": {
     "fmt": "prettier --write \"{lib,tests}/**/*.js\" index.d.ts package.json",
@@ -33,12 +33,12 @@
     "test": "ava **/*.test.js"
   },
   "bugs": {
-    "url": "https://github.com/sighwang/lumos/issues"
+    "url": "https://github.com/ximingwang/lumos/issues"
   },
   "dependencies": {
-    "@sighwang/base": "^0.17.0-rc8.7",
-    "@sighwang/ckb-indexer": "^0.17.0-rc8.7",
-    "@sighwang/toolkit": "^0.17.0-rc8.7",
+    "@ximingwang/base": "^0.17.0-rc8",
+    "@ximingwang/ckb-indexer": "^0.17.0-rc8",
+    "@ximingwang/toolkit": "^0.17.0-rc8",
     "immutable": "^4.0.0-rc.12"
   }
 }

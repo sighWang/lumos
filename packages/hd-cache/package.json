@@ -1,9 +1,9 @@
 {
-  "name": "@sighwang/hd-cache",
-  "version": "0.17.0-rc8.7",
+  "name": "@ximingwang/hd-cache",
+  "version": "0.17.0-rc8",
   "description": "HD wallet cache in lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
-  "homepage": "https://github.com/sighwang/lumos#readme",
+  "homepage": "https://github.com/ximingwang/lumos#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -24,17 +24,17 @@
     "src"
   ],
   "dependencies": {
-    "@sighwang/base": "^0.17.0-rc8.7",
-    "@sighwang/bi": "^0.17.0-rc8.7",
-    "@sighwang/ckb-indexer": "^0.17.0-rc8.7",
-    "@sighwang/config-manager": "^0.17.0-rc8.7",
-    "@sighwang/hd": "^0.17.0-rc8.7",
-    "@sighwang/rpc": "^0.17.0-rc8.7",
+    "@ximingwang/base": "^0.17.0-rc8",
+    "@ximingwang/bi": "^0.17.0-rc8",
+    "@ximingwang/config-manager": "^0.17.0-rc8",
+    "@ximingwang/hd": "^0.17.0-rc8",
+    "@ximingwang/ckb-indexer": "^0.17.0-rc8",
+    "@ximingwang/rpc": "^0.17.0-rc8",
     "immutable": "^4.0.0-rc.12"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sighwang/lumos.git"
+    "url": "git+https://github.com/ximingwang/lumos.git"
   },
   "scripts": {
     "fmt": "prettier --write \"{src,tests}/**/*.ts\" package.json",
@@ -48,7 +48,7 @@
     "release": "npm publish"
   },
   "bugs": {
-    "url": "https://github.com/sighwang/lumos/issues"
+    "url": "https://github.com/ximingwang/lumos/issues"
   },
   "ava": {
     "extensions": [

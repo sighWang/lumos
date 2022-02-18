@@ -1,9 +1,9 @@
 {
-  "name": "@sighwang/ckb-indexer",
-  "version": "0.17.0-rc8.7",
+  "name": "@ximingwang/ckb-indexer",
+  "version": "0.17.0-rc8",
   "description": "CKB Indexer",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
-  "homepage": "https://github.com/sighwang/lumos#readme",
+  "homepage": "https://github.com/ximingwang/lumos#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -17,17 +17,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sighwang/lumos.git"
+    "url": "git+https://github.com/ximingwang/lumos.git"
   },
   "files": [
     "lib",
     "src"
   ],
   "dependencies": {
-    "@sighwang/base": "^0.17.0-rc8.7",
-    "@sighwang/bi": "^0.17.0-rc8.7",
-    "@sighwang/rpc": "^0.17.0-rc8.7",
-    "@sighwang/toolkit": "^0.17.0-rc8.7",
+    "@ximingwang/base": "^0.17.0-rc8",
+    "@ximingwang/bi": "^0.17.0-rc8",
+    "@ximingwang/rpc": "^0.17.0-rc8",
+    "@ximingwang/toolkit": "^0.17.0-rc8",
     "cross-fetch": "^3.1.4",
     "events": "^3.3.0"
   },
@@ -47,7 +47,7 @@
     "release": "npm publish"
   },
   "bugs": {
-    "url": "https://github.com/sighwang/lumos/issues"
+    "url": "https://github.com/ximingwang/lumos/issues"
   },
   "ava": {
     "extensions": [
