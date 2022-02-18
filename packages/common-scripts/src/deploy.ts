@@ -8,9 +8,9 @@ import {
   core,
   WitnessArgs,
   Transaction,
-} from "@ckb-lumos/base";
-import { SerializeTransaction } from "@ckb-lumos/base/lib/core";
-import { getConfig, Config, helpers } from "@ckb-lumos/config-manager";
+} from "@sighwang/base";
+import { SerializeTransaction } from "@sighwang/base/lib/core";
+import { getConfig, Config, helpers } from "@sighwang/config-manager";
 import {
   TransactionSkeletonType,
   TransactionSkeleton,
@@ -18,12 +18,12 @@ import {
   createTransactionFromSkeleton,
   parseAddress,
   minimalCellCapacityCompatible,
-} from "@ckb-lumos/helpers";
-import { Reader, normalizers } from "@ckb-lumos/toolkit";
-import { RPC } from "@ckb-lumos/rpc";
+} from "@sighwang/helpers";
+import { Reader, normalizers } from "@sighwang/toolkit";
+import { RPC } from "@sighwang/rpc";
 import { Set } from "immutable";
 import { FromInfo, parseFromInfo, MultisigScript } from "./from_info";
-import { BI, BIish } from "@ckb-lumos/bi";
+import { BI, BIish } from "@sighwang/bi";
 const { ScriptValue } = values;
 
 function bytesToHex(bytes: Uint8Array): string {

@@ -1,5 +1,5 @@
 const { ScriptValue } = require("./values");
-const { BI } = require("@ckb-lumos/bi");
+const { BI } = require("@sighwang/bi");
 
 function isCellMatchQueryOptions(
   cell,

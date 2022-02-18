@@ -29,6 +29,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - name: Install ckb indexer
+        env:
+          CKB_Indexer_Version: 0.2.2
         run: |
           curl -O -L "https://github.com/nervosnetwork/ckb-indexer/releases/download/v$CKB_Indexer_Version/ckb-indexer-$CKB_Indexer_Version-linux.zip"
           unzip -o ckb-indexer-$CKB_Indexer_Version-linux.zip

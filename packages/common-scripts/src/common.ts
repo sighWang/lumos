@@ -4,11 +4,11 @@ import {
   Options,
   createTransactionFromSkeleton,
   minimalCellCapacityCompatible,
-} from "@ckb-lumos/helpers";
+} from "@sighwang/helpers";
 import secp256k1Blake160Multisig from "./secp256k1_blake160_multisig";
 import { FromInfo, parseFromInfo } from "./from_info";
 import secp256k1Blake160 from "./secp256k1_blake160";
-import { getConfig, Config } from "@ckb-lumos/config-manager";
+import { getConfig, Config } from "@sighwang/config-manager";
 import locktimePool from "./locktime_pool";
 import {
   Address,
@@ -21,14 +21,14 @@ import {
   PackedSince,
   utils,
   Transaction,
-} from "@ckb-lumos/base";
+} from "@sighwang/base";
 import anyoneCanPay from "./anyone_can_pay";
 const { ScriptValue } = values;
 import { Set } from "immutable";
-import { SerializeTransaction } from "@ckb-lumos/base/lib/core";
-import { normalizers } from "@ckb-lumos/toolkit";
+import { SerializeTransaction } from "@sighwang/base/lib/core";
+import { normalizers } from "@sighwang/toolkit";
 import { isAcpScript } from "./helper";
-import { BI, BIish } from "@ckb-lumos/bi";
+import { BI, BIish } from "@sighwang/bi";
 
 function defaultLogger(level: string, message: string) {
   console.log(`[${level}] ${message}`);

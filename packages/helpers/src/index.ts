@@ -10,12 +10,12 @@ import {
   PackedSince,
   Transaction,
   WitnessArgs,
-} from "@ckb-lumos/base";
+} from "@sighwang/base";
 import * as bech32 from "bech32";
-import { normalizers, validators, Reader } from "@ckb-lumos/toolkit";
+import { normalizers, validators, Reader } from "@sighwang/toolkit";
 import { List, Record, Map as ImmutableMap } from "immutable";
-import { getConfig, Config } from "@ckb-lumos/config-manager";
-import { BI } from "@ckb-lumos/bi";
+import { getConfig, Config } from "@sighwang/config-manager";
+import { BI } from "@sighwang/bi";
 
 export interface Options {
   config?: Config;

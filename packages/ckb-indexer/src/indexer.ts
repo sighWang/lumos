@@ -8,9 +8,9 @@ import {
   Output,
   utils,
   Block,
-} from "@ckb-lumos/base";
-import { validators } from "@ckb-lumos/toolkit";
-import { RPC } from "@ckb-lumos/rpc";
+} from "@sighwang/base";
+import { validators } from "@sighwang/toolkit";
+import { RPC } from "@sighwang/rpc";
 import { request, requestBatch } from "./services";
 import { CKBCellCollector } from "./collector";
 import { EventEmitter } from "events";
@@ -28,7 +28,7 @@ import {
   Terminator,
   OtherQueryOptions,
 } from "./type";
-import { BI } from "@ckb-lumos/bi";
+import { BI } from "@sighwang/bi";
 
 const DefaultTerminator: Terminator = () => {
   return { stop: false, push: true };

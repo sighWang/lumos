@@ -1,3 +1,3 @@
-# `@ckb-lumos/base`
+# `@sighwang/base`
 
 Base data structures and utilities used in lumos.

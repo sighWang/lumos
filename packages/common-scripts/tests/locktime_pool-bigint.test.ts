@@ -3,15 +3,15 @@ import {
   TransactionSkeleton,
   TransactionSkeletonType,
   Options,
-} from "@ckb-lumos/helpers";
+} from "@sighwang/helpers";
 import { locktimePool, LocktimeCell, FromInfo } from "../src";
 const { transfer, prepareSigningEntries, payFee } = locktimePool;
 import { CellProvider } from "./cell_provider";
 import { calculateMaximumWithdraw } from "../src/dao";
 import { List } from "immutable";
 import { DEV_CONFIG } from "./dev_config";
-import { Config, predefined } from "@ckb-lumos/config-manager";
-import { Header, Cell, CellCollector } from "@ckb-lumos/base";
+import { Config, predefined } from "@sighwang/config-manager";
+import { Header, Cell, CellCollector } from "@sighwang/base";
 import { parseFromInfo } from "../src/from_info";
 import {
   bobSecpDaoDepositInput,
@@ -19,8 +19,8 @@ import {
   tipHeader as inputTipHeader,
 } from "./inputs";
 import { bob } from "./account_info";
-import { since as SinceUtils } from "@ckb-lumos/base";
-import { BI } from "@ckb-lumos/bi";
+import { since as SinceUtils } from "@sighwang/base";
+import { BI } from "@sighwang/bi";
 const { AGGRON4 } = predefined;
 
 const originCapacity = "0x174876e800";
