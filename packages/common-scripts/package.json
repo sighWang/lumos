@@ -1,6 +1,6 @@
 {
   "name": "@ximingwang/common-scripts",
-  "version": "0.17.0-rc8.8",
+  "version": "0.17.0-rc8.9",
   "description": "Common script support in lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/ximingwang/lumos#readme",
@@ -24,12 +24,12 @@
     "src"
   ],
   "dependencies": {
-    "@ximingwang/base": "^0.17.0-rc8.8",
-    "@ximingwang/bi": "^0.17.0-rc8.8",
-    "@ximingwang/config-manager": "^0.17.0-rc8.8",
-    "@ximingwang/helpers": "^0.17.0-rc8.8",
-    "@ximingwang/rpc": "^0.17.0-rc8.8",
-    "@ximingwang/toolkit": "^0.17.0-rc8.8",
+    "@ximingwang/base": "^0.17.0-rc8.9",
+    "@ximingwang/bi": "^0.17.0-rc8.9",
+    "@ximingwang/config-manager": "^0.17.0-rc8.9",
+    "@ximingwang/helpers": "^0.17.0-rc8.9",
+    "@ximingwang/rpc": "^0.17.0-rc8.9",
+    "@ximingwang/toolkit": "^0.17.0-rc8.9",
     "immutable": "^4.0.0-rc.12"
   },
   "repository": {

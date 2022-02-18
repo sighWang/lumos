@@ -1,6 +1,6 @@
 {
   "name": "@ximingwang/hd-cache",
-  "version": "0.17.0-rc8.8",
+  "version": "0.17.0-rc8.9",
   "description": "HD wallet cache in lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/ximingwang/lumos#readme",
@@ -24,12 +24,12 @@
     "src"
   ],
   "dependencies": {
-    "@ximingwang/base": "^0.17.0-rc8.8",
-    "@ximingwang/bi": "^0.17.0-rc8.8",
-    "@ximingwang/ckb-indexer": "^0.17.0-rc8.8",
-    "@ximingwang/config-manager": "^0.17.0-rc8.8",
-    "@ximingwang/hd": "^0.17.0-rc8.8",
-    "@ximingwang/rpc": "^0.17.0-rc8.8",
+    "@ximingwang/base": "^0.17.0-rc8.9",
+    "@ximingwang/bi": "^0.17.0-rc8.9",
+    "@ximingwang/ckb-indexer": "^0.17.0-rc8.9",
+    "@ximingwang/config-manager": "^0.17.0-rc8.9",
+    "@ximingwang/hd": "^0.17.0-rc8.9",
+    "@ximingwang/rpc": "^0.17.0-rc8.9",
     "immutable": "^4.0.0-rc.12"
   },
   "repository": {
