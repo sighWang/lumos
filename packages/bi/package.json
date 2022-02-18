@@ -1,6 +1,6 @@
 {
   "name": "@ximingwang/bi",
-  "version": "0.17.0-rc8.9",
+  "version": "0.17.0-rc8.10",
   "description": "Bigint support in lumos",
   "author": "",
   "homepage": "https://github.com/ximingwang/lumos#readme",
