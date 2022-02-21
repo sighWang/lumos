@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0-rc8.15](https://github.com/ximingwang/lumos/compare/v0.17.0-rc8.7...v0.17.0-rc8.15) (2022-02-21)
+
+
+### Features
+
+* update ([67ca7c2](https://github.com/ximingwang/lumos/commit/67ca7c2cea4108caf9d16ea54f13d1fc20b41280))
+
+
+
+
+
 # [0.17.0-rc8.14](https://github.com/ximingwang/lumos/compare/v0.17.0-rc8.7...v0.17.0-rc8.14) (2022-02-21)
 
 
