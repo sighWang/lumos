@@ -1,6 +1,6 @@
 {
   "name": "@ximingwang/hd",
-  "version": "0.17.0-rc8.14",
+  "version": "0.17.0-rc8.15",
   "description": "HD wallet manager in lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/ximingwang/lumos#readme",
@@ -24,8 +24,8 @@
     "src"
   ],
   "dependencies": {
-    "@ximingwang/base": "^0.17.0-rc8.14",
-    "@ximingwang/bi": "^0.17.0-rc8.14",
+    "@ximingwang/base": "^0.17.0-rc8.15",
+    "@ximingwang/bi": "^0.17.0-rc8.15",
     "bn.js": "^5.1.3",
     "elliptic": "^6.5.4",
     "sha3": "^2.1.3",

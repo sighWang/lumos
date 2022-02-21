@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@lumos-examples/pw-lock-metamask",
-  "version": "0.17.0-rc8.14",
+  "version": "0.17.0-rc8.15",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
-    "@ximingwang/lumos": "^0.17.0-rc8.14",
+    "@ximingwang/lumos": "^0.17.0-rc8.15",
     "keccak": "^3.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

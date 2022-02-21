@@ -5,6 +5,8 @@
 ![license](https://img.shields.io/github/license/nervosnetwork/lumos)
 ![Lumos](./assets/lumos.jpg)
 
+update readme
+
 > Lumos is still under active development and considered to be a work in progress.
 
 Lumos is a full featured JavaScript/TypeScript based dapp framework for Nervos CKB. It aims to simplify dapp development on Nervos CKB. The [name](https://harrypotter.fandom.com/wiki/Lumos_Maxima) explains what the project is about: the wonderland of CKB, though vast and fertile, still remains dark in most of the parts, lumos tries to shed light upon the land, guiding people into this beautiful new world.
@@ -25,7 +27,6 @@ As of now, lumos contains the following components:
 - [rpc](./packages/rpc): RPC module for CKB RPC. Provide type definations for CKB RPC interface.
 
 ## Examples
-
 we have provided some use cases for Lumos, such as interactions with MetaMask, transfers CKB, address conversions, etc. which you can find in [examples](./examples)
 
 ## Building
