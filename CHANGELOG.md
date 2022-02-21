@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0-rc8.14](https://github.com/nervosnetwork/lumos/compare/v0.17.0-rc8.7...v0.17.0-rc8.14) (2022-02-21)
+
+
+### Bug Fixes
+
+* **examples:** add @ckb-lumos/lumos dependence to pw-lock and secp256k1 ([55ddc16](https://github.com/nervosnetwork/lumos/commit/55ddc16ec9446bf080dfeedc2f55b04713deac1c))
+* **examples:** add @ckb-lumos/lumos dependence which is missing ([8aedfdb](https://github.com/nervosnetwork/lumos/commit/8aedfdbd673cfdd5d1bff68fed97b448f560b30f))
+
+
+### Features
+
+* **common-scripts:** added P2PKH general function ([#254](https://github.com/nervosnetwork/lumos/issues/254)) ([279f793](https://github.com/nervosnetwork/lumos/commit/279f7937f4da6cae7473b30c6b3f929b90e164e5))
+* update ([67ca7c2](https://github.com/nervosnetwork/lumos/commit/67ca7c2cea4108caf9d16ea54f13d1fc20b41280))
+
+
+
+
+
 # [0.17.0-rc8.13](https://github.com/nervosnetwork/lumos/compare/v0.17.0-rc8.7...v0.17.0-rc8.13) (2022-02-18)
 
 
