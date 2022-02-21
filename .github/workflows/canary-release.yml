@@ -46,8 +46,11 @@ jobs:
         with:
           node-version: 16
           registry-url: "https://registry.npmjs.org"
-      - name: install
-        run: yarn
+      - name: install and build
+        run: | 
+        yarn
+        yarn run build
+        yarn run build-release
       - name: Publish
         run: yarn run release:canary
         env:
