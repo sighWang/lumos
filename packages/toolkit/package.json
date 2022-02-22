@@ -1,6 +1,6 @@
 {
   "name": "@ximingwang/toolkit",
-  "version": "0.17.0-rc8.16",
+  "version": "0.17.0-rc8.17",
   "description": "JavaScript toolkits used to build dapps for Nervos CKB",
   "main": "lib/index.js",
   "types": "index.d.ts",
