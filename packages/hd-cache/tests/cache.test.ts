@@ -1,6 +1,6 @@
 import test from "ava";
-import { TransactionCollector } from "@ckb-lumos/ckb-indexer";
-import { Indexer } from "@ckb-lumos/base";
+import { TransactionCollector } from "@ximingwang/ckb-indexer";
+import { Indexer } from "@ximingwang/base";
 
 import { CacheManager, getBalance } from "../src";
 import {
@@ -15,8 +15,8 @@ import {
   QueryOptions,
   TransactionWithStatus,
   HexString,
-} from "@ckb-lumos/base";
-import { BI } from "@ckb-lumos/bi";
+} from "@ximingwang/base";
+import { BI } from "@ximingwang/bi";
 
 const mockTxs: TransactionWithStatus[] = [
   {

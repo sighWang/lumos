@@ -5,8 +5,8 @@ import {
   encodeToSecp256k1Blake160MultisigAddress,
   generateAddress,
 } from "../src";
-import { CKB2021, Config, predefined } from "@ckb-lumos/config-manager";
-import { HashType, Script } from "@ckb-lumos/base";
+import { CKB2021, Config, predefined } from "@ximingwang/config-manager";
+import { HashType, Script } from "@ximingwang/base";
 
 const LINA = CKB2021(predefined.LINA);
 const AGGRON4 = CKB2021(predefined.AGGRON4);
