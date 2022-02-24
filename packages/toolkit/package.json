@@ -34,5 +34,6 @@
   "peerDependencies": {
     "cross-fetch": "^3.1.4",
     "jsbi": "^4.1.0"
-  }
+  },
+  "gitHead": "145ffcb2d9ea0a8f36b5b15214a75a7d42404bb4"
 }
