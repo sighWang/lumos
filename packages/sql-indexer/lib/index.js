@@ -1,14 +1,14 @@
-const { RPC, Reader, validators } = require("@ckb-lumos/toolkit");
+const { RPC, Reader, validators } = require("@ximingwang/toolkit");
 const { EventEmitter } = require("events");
-const { utils, indexer: BaseIndexerModule } = require("@ckb-lumos/base");
-const { BI } = require("@ckb-lumos/bi");
+const { utils, indexer: BaseIndexerModule } = require("@ximingwang/base");
+const { BI } = require("@ximingwang/bi");
 const SCRIPT_TYPE_LOCK = 0;
 const SCRIPT_TYPE_TYPE = 1;
 
 const IO_TYPE_INPUT = 0;
 const IO_TYPE_OUTPUT = 1;
 
-class IndexerEmitter extends EventEmitter {}
+class IndexerEmitter extends EventEmitter { }
 IndexerEmitter.prototype.lock = undefined;
 IndexerEmitter.prototype.type = undefined;
 IndexerEmitter.prototype.outputData = undefined;

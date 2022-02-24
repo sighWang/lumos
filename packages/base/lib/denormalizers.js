@@ -1,5 +1,5 @@
-const { BI } = require("@ckb-lumos/bi");
-const { Reader } = require("@ckb-lumos/toolkit");
+const { BI } = require("@ximingwang/bi");
+const { Reader } = require("@ximingwang/toolkit");
 
 function DenormalizeOutPoint(outPoint) {
   return {

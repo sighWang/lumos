@@ -3,7 +3,7 @@ import {
   validators,
   normalizers,
   transformers,
-} from "@ckb-lumos/toolkit";
+} from "@ximingwang/toolkit";
 
 export const toolkit = { Reader, validators, normalizers, transformers };
 
@@ -21,7 +21,7 @@ export type {
   Input,
   Output,
   Script,
-} from "@ckb-lumos/base/lib/api";
+} from "@ximingwang/base/lib/api";
 
 export type {
   Address,
@@ -32,14 +32,14 @@ export type {
   HexadecimalRange,
   PackedDao,
   PackedSince,
-} from "@ckb-lumos/base/lib/primitive";
+} from "@ximingwang/base/lib/primitive";
 
-export { core, since, utils } from "@ckb-lumos/base";
-export * as config from "@ckb-lumos/config-manager";
+export { core, since, utils } from "@ximingwang/base";
+export * as config from "@ximingwang/config-manager";
 
-export { RPC } from "@ckb-lumos/rpc";
-export * as hd from "@ckb-lumos/hd";
-export { Indexer, CellCollector } from "@ckb-lumos/ckb-indexer";
-export * as helpers from "@ckb-lumos/helpers";
-export * as commons from "@ckb-lumos/common-scripts";
-export { BI } from "@ckb-lumos/bi";
+export { RPC } from "@ximingwang/rpc";
+export * as hd from "@ximingwang/hd";
+export { Indexer, CellCollector } from "@ximingwang/ckb-indexer";
+export * as helpers from "@ximingwang/helpers";
+export * as commons from "@ximingwang/common-scripts";
+export { BI } from "@ximingwang/bi";

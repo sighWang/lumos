@@ -1,4 +1,4 @@
-import { BIish, BI } from "@ckb-lumos/bi";
+import { BIish, BI } from "@ximingwang/bi";
 import { HexNumber, PackedSince, HexString } from "./primitive";
 
 export interface EpochSinceValue {

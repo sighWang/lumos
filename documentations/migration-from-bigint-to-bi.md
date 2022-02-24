@@ -31,14 +31,14 @@ We provide a new API for returning BI that ends with Compatible, for example, bo
 The migration is still a work in progress and you will need to work ahead based on this branch, see the following example
 
 ```
-git clone https://github.com/nervosnetwork/lumos.git
+git clone https://github.com/@ximingwang/lumos.git
 cd lumos
 make build-bi
 cd packages/bi
 yarn link
 
 cd /path/to/my/proj
-yarn link @ckb-lumos/bi
+yarn link @ximingwang/bi
 ```
 
 ### package.json
@@ -46,7 +46,7 @@ yarn link @ckb-lumos/bi
 ```json
 {
   "resolutions": {
-    "@ckb-lumos": "x.y.z"
+    "@ximingwang": "x.y.z"
   }
 }
 ```

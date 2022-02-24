@@ -1,5 +1,4 @@
-ckb-js-toolkit
-==============
+# ckb-js-toolkit
 
 JavaScript toolkit for Nervos CKB. It contains a series of independent tools that can aid develoment of CKB dapps. This is different from a normal CKB SDK, since it tries to minimize the work done in an SDK, while providing more utlities that could be handy.
 
@@ -11,8 +10,8 @@ The toolkit here is built with specific design goals, if some of the design feel
 
 One design goal here is the stability of the toolkit, meaning the toolkit version you use can stay unchanged unless one of the following conditions is met:
 
-* A security vulnerability occurs
-* A fork happens in CKB
+- A security vulnerability occurs
+- A fork happens in CKB
 
 ## Code Compatibility
 
@@ -28,13 +27,13 @@ In the future we might certainly provide TypeScript typing files(and maybe also 
 
 # Table Of Contents
 
-* [RPC](#rpc)
-* [Reader](#reader)
-* [Utility Functions](#utility-functions)
-    + [Validators](#validators)
-    + [Transformers](#transformers)
-    + [Normalizers](#normalizers)
-* [Cell Collectors](#cell-collectors)
+- [RPC](#rpc)
+- [Reader](#reader)
+- [Utility Functions](#utility-functions)
+  - [Validators](#validators)
+  - [Transformers](#transformers)
+  - [Normalizers](#normalizers)
+- [Cell Collectors](#cell-collectors)
 
 # RPC
 
@@ -87,15 +86,15 @@ Type ".help" for more information.
 }
 ```
 
-Please refer to [CKB's RPC documentation](https://github.com/nervosnetwork/ckb/tree/develop/rpc) for more details on different RPCs. All values accepted by the RPC module has to be JSON ready values(such as hex strings or objects) following CKB's JSONRPC formatting rules. See [Validators](#validators) and [Transformers](#transformers) sections below on how the toolkit can aid the conversion work.
+Please refer to [CKB's RPC documentation](https://github.com/@ximingwang/ckb/tree/develop/rpc) for more details on different RPCs. All values accepted by the RPC module has to be JSON ready values(such as hex strings or objects) following CKB's JSONRPC formatting rules. See [Validators](#validators) and [Transformers](#transformers) sections below on how the toolkit can aid the conversion work.
 
 # Reader
 
 Reader class serves a unique purpose: depending on sources of data, we might get values in different formats:
 
-* Hex string might be provided in CKB RPC responses
-* ArrayBuffer might be provided by CKB syscalls
-* Raw string might also be used for coding convenience
+- Hex string might be provided in CKB RPC responses
+- ArrayBuffer might be provided by CKB syscalls
+- Raw string might also be used for coding convenience
 
 One big question, is how we can manage all those different data formats? How can we ensure we can convert them to the correct hex format beforing sending them to CKB's RPC? Reader class serves this purpose:
 
@@ -206,8 +205,8 @@ Uncaught Error: transaction.outputs[1].lock.args must be a hex string!
 
 From the example above, we can deduce some insights:
 
-* Validator function will check if given object has correct keys for each field required in the object. For example, a transaction object do not need `hash` field, but CKB's RPC response contains this field, hence the first validator invocation fails. Later when we delete the `hash` key, the object passes all validation.
-* By default validator function recursively check all fields to make sure they follow the correct format. In the above example, the validator would signal error when we change `args` field of one output's lock script to `123`, which is an invalid value. You will also notice that the error message generated in this case is: `transaction.outputs[1].lock.args must be a hex string!`, it contains the full path of the error value: `transaction.outputs[1].lock.args`.
+- Validator function will check if given object has correct keys for each field required in the object. For example, a transaction object do not need `hash` field, but CKB's RPC response contains this field, hence the first validator invocation fails. Later when we delete the `hash` key, the object passes all validation.
+- By default validator function recursively check all fields to make sure they follow the correct format. In the above example, the validator would signal error when we change `args` field of one output's lock script to `123`, which is an invalid value. You will also notice that the error message generated in this case is: `transaction.outputs[1].lock.args must be a hex string!`, it contains the full path of the error value: `transaction.outputs[1].lock.args`.
 
 Notice you are not required to use validator functions in your dapp: if you are familiar with CKB's data structure, you are perfectly good ignoring all validator functions, and ensure the objects are in correct format yourself. But I personally I believe validators are gonna be a very handy component in your toolbox when you run into formatting errors in your dapp.
 
@@ -215,19 +214,19 @@ Notice you are not required to use validator functions in your dapp: if you are 
 
 For each CKB data structure, we have prepared a validator function, which means right now the following functions are available:
 
-* [ValidateScript](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L65)
-* [ValidateOutPoint](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L83)
-* [ValidateCellInput](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L92)
-* [ValidateCellOutput](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L106)
-* [ValidateCellDep](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L125)
-* [ValidateRawTransaction](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L195)
-* [ValidateTransaction](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L215)
-* [ValidateRawHeader](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L255)
-* [ValidateHeader](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L279)
-* [ValidateUncleBlock](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L316)
-* [ValidateBlock](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L335)
-* [ValidateCellbaseWitness](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L371)
-* [ValidateWitnessArgs](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L385)
+- [ValidateScript](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L65)
+- [ValidateOutPoint](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L83)
+- [ValidateCellInput](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L92)
+- [ValidateCellOutput](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L106)
+- [ValidateCellDep](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L125)
+- [ValidateRawTransaction](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L195)
+- [ValidateTransaction](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L215)
+- [ValidateRawHeader](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L255)
+- [ValidateHeader](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L279)
+- [ValidateUncleBlock](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L316)
+- [ValidateBlock](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L335)
+- [ValidateCellbaseWitness](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L371)
+- [ValidateWitnessArgs](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/validators.js#L385)
 
 Each validator function uses exactly the same function prototype as below:
 
@@ -310,19 +309,19 @@ Unlike validators, we expect you to heavily rely on transformers in your dapps. 
 
 For each CKB data structure, we have prepared a transformer function, which means right now the following functions are available:
 
-* [TransformScript](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L44)
-* [TransformOutPoint](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L62)
-* [TransformCellInput](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L88)
-* [TransformCellOutput](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L105)
-* [TransformCellDep](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L123)
-* [TransformRawTransaction](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L148)
-* [TransformTransaction](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L169)
-* [TransformRawHeader](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L191)
-* [TransformHeader](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L216)
-* [TransformUncleBlock](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L242)
-* [TransformBlock](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L259)
-* [TransformCellbaseWitness](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L278)
-* [TransformWitnessArgs](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L295)
+- [TransformScript](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L44)
+- [TransformOutPoint](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L62)
+- [TransformCellInput](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L88)
+- [TransformCellOutput](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L105)
+- [TransformCellDep](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L123)
+- [TransformRawTransaction](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L148)
+- [TransformTransaction](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L169)
+- [TransformRawHeader](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L191)
+- [TransformHeader](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L216)
+- [TransformUncleBlock](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L242)
+- [TransformBlock](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L259)
+- [TransformCellbaseWitness](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L278)
+- [TransformWitnessArgs](https://github.com/xxuejie/ckb-js-toolkit/blob/48eb43f10da07d30ebc9411c7a0714905ef9164f/src/transformers.js#L295)
 
 Each transformer function uses exactly the same function prototype as below:
 
@@ -336,10 +335,10 @@ function transform(value, { validation = true, debugPath = "" } = {})
 
 Transformer functions use the following transformation rules:
 
-* If the provide value is an object with method `serializeJson`, invoke the method and use the return value to replace provided value;
-* Check if the value is an object, throw error if it is not;
-* Remove all extra keys that should not exist for the type of current value object;
-* For each field in the object, apply the transformation rules recursively.
+- If the provide value is an object with method `serializeJson`, invoke the method and use the return value to replace provided value;
+- Check if the value is an object, throw error if it is not;
+- Remove all extra keys that should not exist for the type of current value object;
+- For each field in the object, apply the transformation rules recursively.
 
 ### Note on Reader class
 
@@ -357,19 +356,19 @@ A sample usage for this package can be seen in the included [tests](https://gith
 
 For each CKB data structure, we have prepared a normalizer function, which means right now the following functions are available:
 
-* [NormalizeScript](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L71)
-* [NormalizeOutPoint](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L92)
-* [NormalizeCellInput](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L107)
-* [NormalizeCellOutput](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L117)
-* [NormalizeCellDep](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L133)
-* [NormalizeRawTransaction](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L161)
-* [NormalizeTransaction](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L175)
-* [NormalizeRawHeader](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L189)
-* [NormalizeHeader](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L207)
-* [NormalizeUncleBlock](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L218)
-* [NormalizeBlock](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L228)
-* [NormalizeCellbaseWitness](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L237)
-* [NormalizeWitnessArgs](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L247)
+- [NormalizeScript](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L71)
+- [NormalizeOutPoint](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L92)
+- [NormalizeCellInput](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L107)
+- [NormalizeCellOutput](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L117)
+- [NormalizeCellDep](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L133)
+- [NormalizeRawTransaction](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L161)
+- [NormalizeTransaction](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L175)
+- [NormalizeRawHeader](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L189)
+- [NormalizeHeader](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L207)
+- [NormalizeUncleBlock](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L218)
+- [NormalizeBlock](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L228)
+- [NormalizeCellbaseWitness](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L237)
+- [NormalizeWitnessArgs](https://github.com/xxuejie/ckb-js-toolkit/blob/d17eda8dc41689b14913500332085d9a9ae85a01/src/normalizers.js#L247)
 
 Each normalizer function uses exactly the same function prototype as below:
 
@@ -422,12 +421,12 @@ Here we are using [RPCCollector](https://github.com/xxuejie/ckb-js-toolkit/blob/
 
 A cell collector should satisfy the following rules:
 
-* It should provide a `collect` method that returns an async iterator;
-* The async iterator should generate plain JavaScript objects with the following fields:
-    + `cell_output`: CellOutput object that can be validated by `ValidateCellOutput`
-    + `out_point`: OutPoint object that can be validated by `ValidateOutPoint`
-    + `block_hash`: A 66-byte long hex string containing block header hash
-    * `data`: An optional hex string containing cell data, depending on the specific cell collector, this could be omitted, in which case `null` should be used here.
+- It should provide a `collect` method that returns an async iterator;
+- The async iterator should generate plain JavaScript objects with the following fields:
+  - `cell_output`: CellOutput object that can be validated by `ValidateCellOutput`
+  - `out_point`: OutPoint object that can be validated by `ValidateOutPoint`
+  - `block_hash`: A 66-byte long hex string containing block header hash
+  * `data`: An optional hex string containing cell data, depending on the specific cell collector, this could be omitted, in which case `null` should be used here.
 
 In the above example we are only showing RPCCollector, there might be many different implementations of cell collectors, assuming they satisfy the above rules. In the future we might add more cell collector implementations here, and you are also welcome to create your own implementations of cell collectors.
 
@@ -437,6 +436,6 @@ One additional note here, is that even though RPCCollector above only gathers ce
 
 ### RPCCollector
 
-RPCCollector uses [get_cells_by_lock_hash](https://github.com/nervosnetwork/ckb/tree/develop/rpc#get_cells_by_lock_hash) to fetch matched live cells via CKB RPC. It only allows fetching live cells matching provided lock script hash, and can be controlled to either provide or omit cell data.
+RPCCollector uses [get_cells_by_lock_hash](https://github.com/@ximingwang/ckb/tree/develop/rpc#get_cells_by_lock_hash) to fetch matched live cells via CKB RPC. It only allows fetching live cells matching provided lock script hash, and can be controlled to either provide or omit cell data.
 
 Note RPCCollector is a naive implementation, meaning it would do the full scanning every time you call `collect`. This means it could be quite slow, and you should never use it in production. It is only used here for demostration purposes.

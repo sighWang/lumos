@@ -1,9 +1,9 @@
 {
-  "name": "@ckb-lumos/lumos",
+  "name": "@ximingwang/lumos",
   "version": "0.18.0-rc5",
   "description": "A root package for Lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
-  "homepage": "https://github.com/nervosnetwork/lumos#readme",
+  "homepage": "https://github.com/@ximingwang/lumos#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "browser": "lib/lumos.min.js",
@@ -25,7 +25,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nervosnetwork/lumos.git"
+    "url": "git+https://github.com/@ximingwang/lumos.git"
   },
   "scripts": {
     "fmt": "prettier --write \"{src,tests}/**/*.ts\" package.json",
@@ -39,18 +39,18 @@
     "release": "npm publish"
   },
   "bugs": {
-    "url": "https://github.com/nervosnetwork/lumos/issues"
+    "url": "https://github.com/@ximingwang/lumos/issues"
   },
   "dependencies": {
-    "@ckb-lumos/base": "0.18.0-rc5",
-    "@ckb-lumos/bi": "0.18.0-rc5",
-    "@ckb-lumos/ckb-indexer": "0.18.0-rc5",
-    "@ckb-lumos/common-scripts": "0.18.0-rc5",
-    "@ckb-lumos/config-manager": "0.18.0-rc5",
-    "@ckb-lumos/hd": "0.18.0-rc5",
-    "@ckb-lumos/helpers": "0.18.0-rc5",
-    "@ckb-lumos/rpc": "0.18.0-rc5",
-    "@ckb-lumos/toolkit": "0.18.0-rc5"
+    "@ximingwang/base": "0.18.0-rc5",
+    "@ximingwang/bi": "0.18.0-rc5",
+    "@ximingwang/ckb-indexer": "0.18.0-rc5",
+    "@ximingwang/common-scripts": "0.18.0-rc5",
+    "@ximingwang/config-manager": "0.18.0-rc5",
+    "@ximingwang/hd": "0.18.0-rc5",
+    "@ximingwang/helpers": "0.18.0-rc5",
+    "@ximingwang/rpc": "0.18.0-rc5",
+    "@ximingwang/toolkit": "0.18.0-rc5"
   },
   "devDependencies": {
     "buffer": "^6.0.3",

@@ -1,5 +1,5 @@
 const { ScriptValue } = require("./values");
-const { BI } = require("@ckb-lumos/bi");
+const { BI } = require("@ximingwang/bi");
 
 function isCellMatchQueryOptions(
   cell,
@@ -76,7 +76,7 @@ function isCellMatchQueryOptions(
         cellLock.code_hash === wrappedLock.script.code_hash &&
         cellLock.hash_type === wrappedLock.script.hash_type &&
         cellLock.args.slice(0, minLength) ===
-          wrappedLock.script.args.slice(0, minLength)
+        wrappedLock.script.args.slice(0, minLength)
       )
     ) {
       return false;
