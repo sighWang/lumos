@@ -28,7 +28,6 @@
     "@ximingwang/bi": "^0.18.0-rc5.0",
     "@ximingwang/config-manager": "^0.18.0-rc5.0",
     "@ximingwang/hd": "^0.18.0-rc5.0",
-    "@ximingwang/indexer": "^0.18.0-rc5.0",
     "@ximingwang/rpc": "^0.18.0-rc5.0",
     "immutable": "^4.0.0-rc.12"
   },
