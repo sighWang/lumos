@@ -1,6 +1,6 @@
 {
   "name": "@ximingwang/config-manager",
-  "version": "0.18.0-rc5.0",
+  "version": "0.18.0-rc5.1",
   "description": "Config manager for lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/ximingwang/lumos#readme",
@@ -42,8 +42,8 @@
   },
   "dependencies": {
     "@types/deep-freeze-strict": "^1.1.0",
-    "@ximingwang/base": "^0.18.0-rc5.0",
-    "@ximingwang/bi": "^0.18.0-rc5.0",
+    "@ximingwang/base": "^0.18.0-rc5.1",
+    "@ximingwang/bi": "^0.18.0-rc5.1",
     "deep-freeze-strict": "^1.1.1"
   },
   "gitHead": "145ffcb2d9ea0a8f36b5b15214a75a7d42404bb4"
