@@ -1,4 +1,14 @@
-import { BI, Cell, config, core, helpers, Indexer, RPC, toolkit, utils } from "@ckb-lumos/lumos";
+import {
+  BI,
+  Cell,
+  config,
+  core,
+  helpers,
+  Indexer,
+  RPC,
+  toolkit,
+  utils,
+} from "@ximingwang/lumos";
 import { default as createKeccak } from "keccak";
 
 export const CONFIG = config.createConfig({
@@ -7,9 +17,11 @@ export const CONFIG = config.createConfig({
     ...config.predefined.AGGRON4.SCRIPTS,
     // https://github.com/lay2dev/pw-core/blob/861310b3dd8638f668db1a08d4c627db4c34d815/src/constants.ts#L156-L169
     PW_LOCK: {
-      CODE_HASH: "0x58c5f491aba6d61678b7cf7edf4910b1f5e00ec0cde2f42e0abb4fd9aff25a63",
+      CODE_HASH:
+        "0x58c5f491aba6d61678b7cf7edf4910b1f5e00ec0cde2f42e0abb4fd9aff25a63",
       HASH_TYPE: "type",
-      TX_HASH: "0x57a62003daeab9d54aa29b944fc3b451213a5ebdf2e232216a3cfed0dde61b38",
+      TX_HASH:
+        "0x57a62003daeab9d54aa29b944fc3b451213a5ebdf2e232216a3cfed0dde61b38",
       INDEX: "0x0",
       DEP_TYPE: "code",
     },
@@ -70,7 +82,9 @@ export async function transfer(options: Options): Promise<string> {
   }
 
   if (collectedSum.lt(neededCapacity)) {
-    throw new Error(`Not enough CKB, expected: ${neededCapacity}, actual: ${collectedSum} `);
+    throw new Error(
+      `Not enough CKB, expected: ${neededCapacity}, actual: ${collectedSum} `
+    );
   }
 
   const transferOutput: Cell = {
@@ -90,7 +104,9 @@ export async function transfer(options: Options): Promise<string> {
   };
 
   tx = tx.update("inputs", (inputs) => inputs.push(...collectedCells));
-  tx = tx.update("outputs", (outputs) => outputs.push(transferOutput, changeOutput));
+  tx = tx.update("outputs", (outputs) =>
+    outputs.push(transferOutput, changeOutput)
+  );
   tx = tx.update("cellDeps", (cellDeps) =>
     cellDeps.push(
       // pw-lock dep
@@ -115,7 +131,9 @@ export async function transfer(options: Options): Promise<string> {
   const messageForSigning = (() => {
     const rawTxHash = utils.ckbHash(
       core.SerializeRawTransaction(
-        toolkit.normalizers.NormalizeRawTransaction(helpers.createTransactionFromSkeleton(tx))
+        toolkit.normalizers.NormalizeRawTransaction(
+          helpers.createTransactionFromSkeleton(tx)
+        )
       )
     );
 
@@ -132,7 +150,11 @@ export async function transfer(options: Options): Promise<string> {
 
     const lengthBuffer = new ArrayBuffer(8);
     const view = new DataView(lengthBuffer);
-    view.setBigUint64(0, BigInt(new toolkit.Reader(serializedWitness).length()), true);
+    view.setBigUint64(
+      0,
+      BigInt(new toolkit.Reader(serializedWitness).length()),
+      true
+    );
 
     keccak.update(Buffer.from(new Uint8Array(lengthBuffer)));
     keccak.update(Buffer.from(new Uint8Array(serializedWitness)));
@@ -147,7 +169,8 @@ export async function transfer(options: Options): Promise<string> {
 
   let v = Number.parseInt(signedMessage.slice(-2), 16);
   if (v >= 27) v -= 27;
-  signedMessage = "0x" + signedMessage.slice(2, -2) + v.toString(16).padStart(2, "0");
+  signedMessage =
+    "0x" + signedMessage.slice(2, -2) + v.toString(16).padStart(2, "0");
 
   const signedWitness = new toolkit.Reader(
     core.SerializeWitnessArgs({

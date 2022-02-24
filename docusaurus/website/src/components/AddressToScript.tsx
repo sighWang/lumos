@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import "antd/dist/antd.css";
 import styled from "styled-components";
 import { toConfigWithoutShortId } from "../helpers/configHelper";
-import { Address, config, HashType, helpers, Script } from "@ckb-lumos/lumos";
+import { Address, config, HashType, helpers, Script } from "@ximingwang/lumos";
 type AddressType = "Mainnet" | "Testnet";
 
 const StyleWrapper = styled.div`

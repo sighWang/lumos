@@ -1,13 +1,13 @@
-import { Cell, Script } from "@ckb-lumos/base";
-import { common } from "@ckb-lumos/common-scripts";
+import { Cell, Script } from "@ximingwang/base";
+import { common } from "@ximingwang/common-scripts";
 import test from "ava";
 import { CellProvider } from "./cell_provider";
 import deploy from "../src/deploy";
 const { __tests__ } = deploy;
 const { calculateTxFee } = __tests__;
-import { predefined } from "@ckb-lumos/config-manager";
-import { TransactionSkeletonType } from "@ckb-lumos/helpers";
-import { BI } from "@ckb-lumos/bi";
+import { predefined } from "@ximingwang/config-manager";
+import { TransactionSkeletonType } from "@ximingwang/helpers";
+import { BI } from "@ximingwang/bi";
 const { AGGRON4 } = predefined;
 
 const FROMADDRESS = "ckt1qyqptxys5l9vk39ft0hswscxgseawc77y2wqlr558h";

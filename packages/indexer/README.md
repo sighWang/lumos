@@ -1,16 +1,16 @@
-# `@ckb-lumos/indexer`
+# `@ximingwang/indexer`
 
 CKB indexer used in lumos framework. Might be possible for independent usage as well. It is based on a [Rust based native indexer](https://github.com/quake/ckb-indexer) for stability and performance.
 
 The indexer is designed to consume from the following sources:
 
-* Direct access of CKB's data dir via RocksDB's readonly or secondary mode;
-* Consistent queries of CKB's RPC.
+- Direct access of CKB's data dir via RocksDB's readonly or secondary mode;
+- Consistent queries of CKB's RPC.
 
 It is also designed to store the indexed data in either of the following storage choices:
 
-* A local RocksDB directory;
-* Remote SQL database, supported databases now include latest stable versions of PostgreSQL and MySQL. For now, the SQL indexer is maintained as a separate `@ckb-lumos/sql-indexer` package, we might merge the 2 indexer packages into one later.
+- A local RocksDB directory;
+- Remote SQL database, supported databases now include latest stable versions of PostgreSQL and MySQL. For now, the SQL indexer is maintained as a separate `@ximingwang/sql-indexer` package, we might merge the 2 indexer packages into one later.
 
 Note for the moment, SQLite is not officially supported, single-node users or Electron users are highly recommended to use the RocksDB solution.
 
@@ -19,7 +19,11 @@ Note for the moment, SQLite is not officially supported, single-node users or El
 ### Start Indexer
 
 ```javascript
-const { Indexer, CellCollector, TransactionCollector } = require("@ckb-lumos/indexer");
+const {
+  Indexer,
+  CellCollector,
+  TransactionCollector,
+} = require("@ximingwang/indexer");
 const indexer = new Indexer("http://127.0.0.1:8114", "/tmp/indexed-data");
 indexer.startForever();
 ```
@@ -28,22 +32,24 @@ To enable HTTP persistent connection to CKB node:
 
 ```javascript
 const httpAgent = new http.Agent({
-	keepAlive: true
+  keepAlive: true,
 });
 const httpsAgent = new https.Agent({
-	keepAlive: true
+  keepAlive: true,
 });
 
-const agent = function(_parsedURL) {
-  if (_parsedURL.protocol == 'http:') {
+const agent = function (_parsedURL) {
+  if (_parsedURL.protocol == "http:") {
     return httpAgent;
   } else {
     return httpsAgent;
   }
-}
+};
 
 const uri = "http://127.0.0.1:8114";
-const indexer = new Indexer(uri, "/tmp/indexed-data", { rpcOptions: { agent: agent(new URL(uri))}});
+const indexer = new Indexer(uri, "/tmp/indexed-data", {
+  rpcOptions: { agent: agent(new URL(uri)) },
+});
 ```
 
 ### CellCollector
@@ -65,34 +71,35 @@ for await (const cell of cellCollector.collect()) {
 }
 ```
 
-You can also specify both `lock` and `type` script: 
+You can also specify both `lock` and `type` script:
+
 ```javascript
 cellCollector = new CellCollector(indexer, {
-    lock: {
-        args: "0x92aad3bbab20f225cff28ec1d856c6ab63284c7a",
-        code_hash: "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
-        hash_type: "type"
-    },
-    type: {
-        args: "0x",
-        code_hash: "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
-        hash_type: "type"
-    }
-})
+  lock: {
+    args: "0x92aad3bbab20f225cff28ec1d856c6ab63284c7a",
+    code_hash:
+      "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
+    hash_type: "type",
+  },
+  type: {
+    args: "0x",
+    code_hash:
+      "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
+    hash_type: "type",
+  },
+});
 
 for await (const cell of cellCollector.collect()) {
   console.log(cell);
 }
 ```
 
-
-
 Range query for cells between given block_numbers is supported:
 
 ```javascript
 cellCollector = new CellCollector(indexer, {
   lock: {
-    code_hash: 
+    code_hash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     hash_type: "type",
     args: "0xa528f2b9a51118b193178db4cf2f3db92e7df323",
@@ -105,6 +112,7 @@ for await (const cell of cellCollector.collect()) {
   console.log(cell);
 }
 ```
+
 It will fetch cells between `[fromBlock, toBlock]`, which means both `fromBlock` and `toBlock` are included in query range.
 
 Page jump when query cells is supported:
@@ -112,7 +120,7 @@ Page jump when query cells is supported:
 ```javascript
 cellCollector = new CellCollector(indexer, {
   lock: {
-    code_hash: 
+    code_hash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     hash_type: "type",
     args: "0xa528f2b9a51118b193178db4cf2f3db92e7df323",
@@ -132,7 +140,7 @@ Order by block number is supported by setting `order` field explicitly:
 ```javascript
 cellCollector = new CellCollector(indexer, {
   lock: {
-    code_hash: 
+    code_hash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     hash_type: "type",
     args: "0xa528f2b9a51118b193178db4cf2f3db92e7df323",
@@ -153,7 +161,7 @@ Prefix search is supported on `args`. The default `argsLen` is -1, which means y
 ```javascript
 cellCollector = new CellCollector(indexer, {
   lock: {
-    code_hash: 
+    code_hash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     hash_type: "type",
     args: "0xa528f2b9a51118b193178db4cf2f3db92e7df3", // truncate the last byte of orignal args: 0xa528f2b9a51118b193178db4cf2f3db92e7df323
@@ -170,12 +178,12 @@ for await (const cell of cellCollector.collect()) {
 }
 ```
 
-You can also set it as `any` when the argsLen of the field args might have multiple possibilities, for example, lock script's args could be 20 in normal scenario and 28 in multisig scenario,  or any other length in customized scenarios. However, there's some performance lost when use `any` rather than explicitly specified length due to the low-level implementation.
+You can also set it as `any` when the argsLen of the field args might have multiple possibilities, for example, lock script's args could be 20 in normal scenario and 28 in multisig scenario, or any other length in customized scenarios. However, there's some performance lost when use `any` rather than explicitly specified length due to the low-level implementation.
 
 ```javascript
 cellCollector = new CellCollector(indexer, {
   lock: {
-    code_hash: 
+    code_hash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     hash_type: "type",
     args: "0xa528f2b9a51118b193178db4cf2f3db92e7d", // truncate the last two bytes of original args: 0xa528f2b9a51118b193178db4cf2f3db92e7df323
@@ -192,28 +200,28 @@ for await (const cell of cellCollector.collect()) {
 }
 ```
 
-
 Fine grained query for cells can be achieved by using [ScriptWrapper](https://github.com/nervosnetwork/lumos/blob/cd418d258085d3cb6ab47eeaf5347073acf5422e/packages/base/index.d.ts#L123), with customized options like `argsLen`:
 
 ```javascript
 cellCollector = new CellCollector(indexer, {
   lock: {
     script: {
-      code_hash: 
+      code_hash:
         "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
       hash_type: "type",
       args: "0xe60f7f88c94ef365d540afc1574c46bb017765", // trucate the last byte of original args: 0xe60f7f88c94ef365d540afc1574c46bb017765a2
     },
-    argsLen: 20, 
+    argsLen: 20,
   },
   type: {
     script: {
-      code_hash: "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
+      code_hash:
+        "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
       hash_type: "type",
       args: "0x",
     },
     // when the `argsLen` is not setted here, it will use the outside `argsLen` config, which in this case is -1 by default
-  }
+  },
 });
 
 for await (const cell of cellCollector.collect()) {
@@ -221,7 +229,7 @@ for await (const cell of cellCollector.collect()) {
 }
 ```
 
-### TransactionCollector 
+### TransactionCollector
 
 Similar solution can be used to query for transactions related to a lock script:
 
@@ -245,13 +253,13 @@ Range query for transactions between given block_numbers is supported:
 ```javascript
 txCollector = new TransactionCollector(indexer, {
   lock: {
-    code_hash: 
+    code_hash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     hash_type: "type",
     args: "0xa528f2b9a51118b193178db4cf2f3db92e7df323",
   },
-  fromBlock: "0x0", // "0x" + 0n.toString(16) 
-  toBlock: "0x7d0" , // "0x" + 2000n.toString(16)
+  fromBlock: "0x0", // "0x" + 0n.toString(16)
+  toBlock: "0x7d0", // "0x" + 2000n.toString(16)
 });
 
 for await (const tx of txCollector.collect()) {
@@ -266,7 +274,7 @@ Page jump when query transactions is supported:
 ```javascript
 txCollector = new TransactionCollector(indexer, {
   lock: {
-    code_hash: 
+    code_hash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     hash_type: "type",
     args: "0xa528f2b9a51118b193178db4cf2f3db92e7df323",
@@ -286,7 +294,7 @@ Order by block number is supported:
 ```javascript
 txCollector = new TransactionCollector(indexer, {
   lock: {
-    code_hash: 
+    code_hash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     hash_type: "type",
     args: "0xa528f2b9a51118b193178db4cf2f3db92e7df323",
@@ -302,13 +310,12 @@ for await (const tx of txCollector.collect()) {
 }
 ```
 
-
 Prefix search is supported on `args`. The default `argsLen` is -1, which means you pass the full slice of original args, and you can specify it when the `args` field is the prefix of original args.
 
 ```javascript
 txCollector = new TransactionCollector(indexer, {
   lock: {
-    code_hash: 
+    code_hash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     hash_type: "type",
     args: "0xa528f2b9a51118b193178db4cf2f3db92e7df3", // truncate the last byte of orignal args: 0xa528f2b9a51118b193178db4cf2f3db92e7df323
@@ -325,12 +332,12 @@ for await (const tx of txCollector.collect()) {
 }
 ```
 
-You can also set it as `any` when the argsLen of the field args might have multiple possibilities, for example, lock script's args could be 20 in normal scenario and 28 in multisig scenario,  or any other length in customized scenarios. However, there's some performance lost when use `any` rather than explicitly specified length due to the low-level implementation.
+You can also set it as `any` when the argsLen of the field args might have multiple possibilities, for example, lock script's args could be 20 in normal scenario and 28 in multisig scenario, or any other length in customized scenarios. However, there's some performance lost when use `any` rather than explicitly specified length due to the low-level implementation.
 
 ```javascript
 txCollector = new TransactionCollector(indexer, {
   lock: {
-    code_hash: 
+    code_hash:
       "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
     hash_type: "type",
     args: "0xa528f2b9a51118b193178db4cf2f3db92e7d", // truncate the last two bytes of original args: 0xa528f2b9a51118b193178db4cf2f3db92e7df323
@@ -353,7 +360,7 @@ Fine grained query for transactions can be achieved by using [ScriptWrapper](htt
 txCollector = new TransactionCollector(indexer, {
   lock: {
     script: {
-      code_hash: 
+      code_hash:
         "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3cce8",
       hash_type: "type",
       args: "0xe60f7f88c94ef365d540afc1574c46bb017765", // trucate the last byte of original args: 0xe60f7f88c94ef365d540afc1574c46bb017765a2
@@ -363,12 +370,13 @@ txCollector = new TransactionCollector(indexer, {
   },
   type: {
     script: {
-      code_hash: "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
+      code_hash:
+        "0x82d76d1b75fe2fd9a27dfbaa65a039221a380d76c926f378d3f81cf3e7e13f2e",
       hash_type: "type",
       args: "0x",
     },
     ioType: "input",
-  }
+  },
 });
 
 for await (const tx of txCollector.collect()) {
@@ -422,12 +430,11 @@ for (let i = 0; i < 20 && i < txHashes.length; i++) {
 }
 
 await batchRpc.send();
-
 ```
 
 ### EventEmitter
 
-Event-driven pattern is also supported besides the above polling pattern. After subsribing for certain `lock|type` script, it will emit a `changed` event when a block containing the subsribed script is indexed or rollbacked. 
+Event-driven pattern is also supported besides the above polling pattern. After subsribing for certain `lock|type` script, it will emit a `changed` event when a block containing the subsribed script is indexed or rollbacked.
 
 The principle of the design is unreliable notification queue, so developers are supposed to pull from the data sources via `CellCollector|TransactionCollector`, to find out what might happened: cell consumed, new cell generated, new transaction generated, or a chain fork happened, etc; and take the next step accordingly.
 
@@ -441,13 +448,15 @@ eventEmitter = indexer.subscribe({
   },
 });
 
-eventEmitter.on("changed",  () => {
-  console.log("States changed with the script, please pull the data sources from the indexer to find out what happend");
-})
-
+eventEmitter.on("changed", () => {
+  console.log(
+    "States changed with the script, please pull the data sources from the indexer to find out what happend"
+  );
+});
 ```
 
 Other query options like `fromBlock|argsLen|data` are also supported.
+
 ```javascript
 eventEmitter = indexer.subscribe({
   lock: {
