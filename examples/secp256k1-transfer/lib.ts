@@ -11,8 +11,8 @@ import {
   core,
   WitnessArgs,
   toolkit,
-} from "@ckb-lumos/lumos";
-import { values } from "@ckb-lumos/base";
+} from "@ximingwang/lumos";
+import { values } from "@ximingwang/base";
 const { ScriptValue } = values;
 
 export const { AGGRON4 } = config.predefined;

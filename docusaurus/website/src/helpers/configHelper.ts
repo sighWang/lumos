@@ -1,4 +1,4 @@
-import { config } from "@ckb-lumos/lumos";
+import { config } from "@ximingwang/lumos";
 
 export function toConfigWithoutShortId(
   configWithShortId: config.Config

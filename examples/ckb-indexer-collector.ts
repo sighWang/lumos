@@ -1,11 +1,6 @@
 // This example shows how to use the CkbIndexer to collect cells
 
-import {
-  Script,
-  Indexer as CkbIndexer,
-  helpers,
-  config,
-} from "@ckb-lumos/lumos";
+import { Script, Indexer as CkbIndexer, helpers, config } from "@ximingwang/lumos";
 
 config.initializeConfig(config.predefined.AGGRON4);
 

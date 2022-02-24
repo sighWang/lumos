@@ -9,5 +9,5 @@ Lumos is a full-featured JavaScript(TypeScript) library for building Nervos CKB 
 ## Quick Start
 
 ```
-yarn add @ckb-lumos/lumos
+yarn add @ximingwang/lumos
 ```

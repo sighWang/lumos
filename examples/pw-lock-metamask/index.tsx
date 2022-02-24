@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { helpers, Script } from "@ckb-lumos/lumos";
+import { helpers, Script } from "@ximingwang/lumos";
 import ReactDOM from "react-dom";
 import { asyncSleep, capacityOf, CONFIG, ethereum, transfer } from "./lib";
 
@@ -58,7 +58,8 @@ export function App() {
   }
 
   if (!ethereum) return <div>MetaMask is not installed</div>;
-  if (!ethAddr) return <button onClick={connectToMetaMask}>Connect to MetaMask</button>;
+  if (!ethAddr)
+    return <button onClick={connectToMetaMask}>Connect to MetaMask</button>;
 
   return (
     <div>
@@ -76,11 +77,21 @@ export function App() {
       <div>
         <h2>Transfer to</h2>
         <label htmlFor="address">Address</label>&nbsp;
-        <input id="address" type="text" onChange={(e) => setTransferAddress(e.target.value)} placeholder="ckt1..." />
+        <input
+          id="address"
+          type="text"
+          onChange={(e) => setTransferAddress(e.target.value)}
+          placeholder="ckt1..."
+        />
         <br />
         <label htmlFor="amount">Amount</label>
         &nbsp;
-        <input id="amount" type="text" onChange={(e) => setTransferAmount(e.target.value)} placeholder="shannon" />
+        <input
+          id="amount"
+          type="text"
+          onChange={(e) => setTransferAmount(e.target.value)}
+          placeholder="shannon"
+        />
         <br />
         <button onClick={onTransfer} disabled={isSendingTx}>
           Transfer
