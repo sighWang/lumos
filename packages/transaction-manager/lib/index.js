@@ -188,7 +188,7 @@ class TransactionManager {
       this.logger(
         "warn",
         params.map((param) => `\`${param}\``).join(", ") +
-        " will not effect on pending cells."
+          " will not effect on pending cells."
       );
     }
     const innerCollector = this.indexer.collector({

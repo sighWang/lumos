@@ -8,7 +8,7 @@ const SCRIPT_TYPE_TYPE = 1;
 const IO_TYPE_INPUT = 0;
 const IO_TYPE_OUTPUT = 1;
 
-class IndexerEmitter extends EventEmitter { }
+class IndexerEmitter extends EventEmitter {}
 IndexerEmitter.prototype.lock = undefined;
 IndexerEmitter.prototype.type = undefined;
 IndexerEmitter.prototype.outputData = undefined;
