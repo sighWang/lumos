@@ -1,4 +1,4 @@
-# `@ckb-lumos/sql-indexer`
+# `@ximingwang/sql-indexer`
 
 CKB indexer using SQL as the storage backend.
 

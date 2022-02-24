@@ -1,5 +1,5 @@
 {
-  "name": "@ckb-lumos/common-scripts",
+  "name": "@ximingwang/common-scripts",
   "version": "0.18.0-rc5",
   "description": "Common script support in lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
@@ -24,12 +24,12 @@
     "src"
   ],
   "dependencies": {
-    "@ckb-lumos/base": "0.18.0-rc5",
-    "@ckb-lumos/bi": "0.18.0-rc5",
-    "@ckb-lumos/config-manager": "0.18.0-rc5",
-    "@ckb-lumos/helpers": "0.18.0-rc5",
-    "@ckb-lumos/rpc": "0.18.0-rc5",
-    "@ckb-lumos/toolkit": "0.18.0-rc5",
+    "@ximingwang/base": "0.18.0-rc5",
+    "@ximingwang/bi": "0.18.0-rc5",
+    "@ximingwang/config-manager": "0.18.0-rc5",
+    "@ximingwang/helpers": "0.18.0-rc5",
+    "@ximingwang/rpc": "0.18.0-rc5",
+    "@ximingwang/toolkit": "0.18.0-rc5",
     "immutable": "^4.0.0-rc.12"
   },
   "repository": {

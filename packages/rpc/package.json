@@ -1,5 +1,5 @@
 {
-  "name": "@ckb-lumos/rpc",
+  "name": "@ximingwang/rpc",
   "version": "0.18.0-rc5",
   "description": "RPC module for CKB",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
@@ -42,9 +42,9 @@
     "url": "https://github.com/nervosnetwork/lumos/issues"
   },
   "dependencies": {
-    "@ckb-lumos/base": "0.18.0-rc5",
-    "@ckb-lumos/bi": "0.18.0-rc5",
-    "@ckb-lumos/toolkit": "0.18.0-rc5"
+    "@ximingwang/base": "0.18.0-rc5",
+    "@ximingwang/bi": "0.18.0-rc5",
+    "@ximingwang/toolkit": "0.18.0-rc5"
   },
   "ava": {
     "extensions": [

@@ -1,11 +1,11 @@
-const { validators, normalizers, Reader, RPC } = require("@ckb-lumos/toolkit");
+const { validators, normalizers, Reader, RPC } = require("@ximingwang/toolkit");
 const { OrderedSet, Map } = require("immutable");
 const XXHash = require("xxhash");
 const { Indexer: NativeIndexer, Emitter, BlockEmitter } = require("../native");
 const { EventEmitter } = require("events");
 const util = require("util");
-const { utils, indexer: BaseIndexerModule } = require("@ckb-lumos/base");
-const { BI } = require("@ckb-lumos/bi");
+const { utils, indexer: BaseIndexerModule } = require("@ximingwang/base");
+const { BI } = require("@ximingwang/bi");
 
 util.inherits(Emitter, EventEmitter);
 util.inherits(BlockEmitter, EventEmitter);

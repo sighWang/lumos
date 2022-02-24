@@ -1,5 +1,5 @@
 const test = require("ava");
-const { helpers, values } = require("@ckb-lumos/base");
+const { helpers, values } = require("@ximingwang/base");
 const TransactionManager = require("../lib");
 const { isCellMatchQueryOptions } = helpers;
 

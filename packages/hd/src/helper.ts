@@ -1,4 +1,4 @@
-import { utils, HexString } from "@ckb-lumos/base";
+import { utils, HexString } from "@ximingwang/base";
 const { assertHexString } = utils;
 
 export function assertPublicKey(
