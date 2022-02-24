@@ -1,9 +1,9 @@
 {
-  "name": "@ckb-lumos/common-scripts",
-  "version": "0.18.0-rc5",
+  "name": "@ximingwang/common-scripts",
+  "version": "0.18.0-rc5.0",
   "description": "Common script support in lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
-  "homepage": "https://github.com/nervosnetwork/lumos#readme",
+  "homepage": "https://github.com/ximingwang/lumos#readme",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -24,17 +24,17 @@
     "src"
   ],
   "dependencies": {
-    "@ckb-lumos/base": "0.18.0-rc5",
-    "@ckb-lumos/bi": "0.18.0-rc5",
-    "@ckb-lumos/config-manager": "0.18.0-rc5",
-    "@ckb-lumos/helpers": "0.18.0-rc5",
-    "@ckb-lumos/rpc": "0.18.0-rc5",
-    "@ckb-lumos/toolkit": "0.18.0-rc5",
+    "@ximingwang/base": "^0.18.0-rc5.0",
+    "@ximingwang/bi": "^0.18.0-rc5.0",
+    "@ximingwang/config-manager": "^0.18.0-rc5.0",
+    "@ximingwang/helpers": "^0.18.0-rc5.0",
+    "@ximingwang/rpc": "^0.18.0-rc5.0",
+    "@ximingwang/toolkit": "^0.18.0-rc5.0",
     "immutable": "^4.0.0-rc.12"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nervosnetwork/lumos.git"
+    "url": "git+https://github.com/ximingwang/lumos.git"
   },
   "scripts": {
     "fmt": "prettier --write \"{src,tests,examples}/**/*.ts\" package.json",
@@ -48,7 +48,7 @@
     "release": "npm publish"
   },
   "bugs": {
-    "url": "https://github.com/nervosnetwork/lumos/issues"
+    "url": "https://github.com/ximingwang/lumos/issues"
   },
   "ava": {
     "extensions": [

@@ -1,6 +1,6 @@
 import test from "ava";
 import { parseAddress } from "../src";
-import { predefined } from "@ckb-lumos/config-manager";
+import { predefined } from "@ximingwang/config-manager";
 
 const LINA = predefined.LINA;
 const AGGRON = predefined.AGGRON4;

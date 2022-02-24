@@ -5,10 +5,10 @@ import {
   Script,
   HexString,
   utils,
-} from "@ckb-lumos/base";
-import { Options, parseAddress } from "@ckb-lumos/helpers";
-import { getConfig } from "@ckb-lumos/config-manager";
-import { BI } from "@ckb-lumos/bi";
+} from "@ximingwang/base";
+import { Options, parseAddress } from "@ximingwang/helpers";
+import { getConfig } from "@ximingwang/config-manager";
+import { BI } from "@ximingwang/bi";
 
 const { CKBHasher, toBigUInt64LE } = utils;
 
