@@ -24,7 +24,7 @@
     "src"
   ],
   "dependencies": {
-    "@ximingwang/base": "0.18.0-rc5",
+    "@ximingwang/base": "0.18.0-rc5.1",
     "@ximingwang/bi": "^0.18.0-rc5.1",
     "@ximingwang/config-manager": "^0.18.0-rc5.1",
     "@ximingwang/helpers": "^0.18.0-rc5.1",

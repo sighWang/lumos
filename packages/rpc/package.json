@@ -42,7 +42,7 @@
     "url": "https://github.com/@ximingwang/lumos/issues"
   },
   "dependencies": {
-    "@ximingwang/base": "0.18.0-rc5",
+    "@ximingwang/base": "0.18.0-rc5.1",
     "@ximingwang/bi": "^0.18.0-rc5.1",
     "@ximingwang/toolkit": "^0.18.0-rc5.1"
   },
