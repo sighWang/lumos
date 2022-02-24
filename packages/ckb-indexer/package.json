@@ -1,6 +1,6 @@
 {
   "name": "@ximingwang/ckb-indexer",
-  "version": "0.18.0-rc5.0",
+  "version": "0.18.0-rc5.1",
   "description": "CKB Indexer",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/ximingwang/lumos#readme",
@@ -24,10 +24,10 @@
     "src"
   ],
   "dependencies": {
-    "@ximingwang/base": "^0.18.0-rc5.0",
-    "@ximingwang/bi": "^0.18.0-rc5.0",
-    "@ximingwang/rpc": "^0.18.0-rc5.0",
-    "@ximingwang/toolkit": "^0.18.0-rc5.0",
+    "@ximingwang/base": "^0.18.0-rc5.1",
+    "@ximingwang/bi": "^0.18.0-rc5.1",
+    "@ximingwang/rpc": "^0.18.0-rc5.1",
+    "@ximingwang/toolkit": "^0.18.0-rc5.1",
     "cross-fetch": "^3.1.4",
     "events": "^3.3.0"
   },
@@ -56,5 +56,6 @@
     "require": [
       "ts-node/register"
     ]
-  }
+  },
+  "gitHead": "145ffcb2d9ea0a8f36b5b15214a75a7d42404bb4"
 }

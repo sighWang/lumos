@@ -1,6 +1,6 @@
 {
   "name": "@ximingwang/transaction-manager",
-  "version": "0.18.0-rc5.0",
+  "version": "0.18.0-rc5.1",
   "description": "Pending Transaction Manager for lumos",
   "author": "Xuejie Xiao <xxuejie@gmail.com>",
   "homepage": "https://github.com/ximingwang/lumos#readme",
@@ -36,8 +36,9 @@
     "url": "https://github.com/ximingwang/lumos/issues"
   },
   "dependencies": {
-    "@ximingwang/base": "^0.18.0-rc5.0",
-    "@ximingwang/toolkit": "^0.18.0-rc5.0",
+    "@ximingwang/base": "^0.18.0-rc5.1",
+    "@ximingwang/toolkit": "^0.18.0-rc5.1",
     "immutable": "^4.0.0-rc.12"
-  }
+  },
+  "gitHead": "145ffcb2d9ea0a8f36b5b15214a75a7d42404bb4"
 }
