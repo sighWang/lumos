@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 'pre test'
-# nohup ts-node tests/start_mock_rpc.ts &
-# sleep 5
+nohup ts-node tests/start_mock_rpc.ts &
+sleep 5
 # ts-node tests/start_ckb_indexer.ts
 # sleep 5
