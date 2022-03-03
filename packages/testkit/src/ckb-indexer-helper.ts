@@ -33,7 +33,7 @@ export function startCKBIndexer(CKBVersion?: string) {
   CKB_Indexer_Version = CKBVersion ? CKBVersion : CKB_Indexer_Version;
   downloadCKBIndexer();
   shell.exec(
-    `nohup ./ckb-indexer -c http://127.0.0.1:8118/rpc -l 127.0.0.1:8120 -s indexer-store-tmp`
+    `nohup ./ckb-indexer -c http://127.0.0.1:8118/rpc -l 127.0.0.1:8120 -s indexer-store-tmp &`
   );
   shell.exec(`echo '{
                 "id": 2,
