@@ -1,5 +1,6 @@
 import shell from "shelljs";
 import compareVersions from "compare-versions";
+import { ChildProcess } from "child_process";
 
 let CKB_Indexer_Version = "0.2.2";
 const download = () => {
@@ -28,19 +29,17 @@ export function downloadCKBIndexer() {
     }
   }
 }
-
-export function startCKBIndexer(CKBVersion?: string) {
+export function startCKBIndexer(CKBVersion?: string): ChildProcess {
   CKB_Indexer_Version = CKBVersion ? CKBVersion : CKB_Indexer_Version;
   downloadCKBIndexer();
-  shell.exec(
-    `nohup ./ckb-indexer -c http://127.0.0.1:8118/rpc -l 127.0.0.1:8120 -s indexer-store-tmp &`
+  const child = shell.exec(
+    `./ckb-indexer -c http://127.0.0.1:8118/rpc -l 127.0.0.1:8120 -s indexer-store-tmp`,
+    { async: true }
   );
-  shell.exec(`echo '{
-                "id": 2,
-                "jsonrpc": "2.0",
-                "method": "get_tip"
-            }' \
-            | tr -d '\n' \
-            | curl -H 'content-type: application/json' -d @- \
-            http://localhost:8120`);
+  console.log("child.pid", child.pid);
+  return child;
+}
+
+export function closeCKBIndexer(child: ChildProcess) {
+  child.kill();
 }
