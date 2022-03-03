@@ -1,5 +1,4 @@
 #!/bin/bash
-# This is our first script.
 echo 'pre test'
 nohup ts-node tests/start_mock_rpc.ts 
 sleep 5
