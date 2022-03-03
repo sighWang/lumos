@@ -2,6 +2,6 @@
 # This is our first script.
 echo 'Hello World!'
 nohup ts-node tests/start_mock_rpc.ts & 
-sleep 5 
+sleep 5 &
 nohup ts-node tests/start_ckb_indexer.ts & 
 sleep 5
