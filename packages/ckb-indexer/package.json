@@ -40,7 +40,7 @@
   "scripts": {
     "fmt": "prettier --write \"{src,tests,examples}/**/*.ts\" package.json",
     "lint": "eslint -c ../../.eslintrc.js \"{src,tests,examples}/**/*.ts\"",
-    "pretest": "./tests/pretest",
+    "pretest": "nohup ts-node tests/start_mock_rpc.ts &",
     "test:e2e": "ava **/*.test.ts --timeout=2m",
     "test": "yarn run test:e2e",
     "build": "npm run build:types && npm run build:js",
