@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Now lumos can run in a web browser
+# Now Lumos Can Run in A Web Browser
 
 ### TL;NR
 
