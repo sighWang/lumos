@@ -492,6 +492,8 @@ export async function generateDeployWithDataTx(
     config: options.config,
   });
 
+  console.log(bytesToHex(options.scriptBinary));
+
   const output: Cell = {
     cell_output: {
       capacity: "0x0",
@@ -542,6 +544,7 @@ export async function generateDeployWithTypeIdTx(
     { previous_output: resolved.out_point!, since: "0x0" },
     "0x0"
   );
+  console.log(bytesToHex(options.scriptBinary));
   const output: Cell = {
     cell_output: {
       capacity: "0x0",
